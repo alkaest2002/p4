@@ -1,0 +1,42 @@
+<div class="md:-mt-px md:flex">
+  {{- if lt .TotalPages 6 }}
+    {{- range .Pagers }}
+      {{- partial "base/paginator-number" (dict "pager" . "activePager" $) }}
+    {{- end }}
+  {{- else }}
+      {{- if lt .PageNumber 4 }}
+        {{- range first 4 .Pagers }}
+          {{- partial "base/paginator-number" (dict "pager" . "activePager" $) }}
+        {{- end }}
+        <span class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500">...</span>
+        {{- with .Last }}
+          {{- partial "base/paginator-number" (dict "pager" . "activePager" $) }}
+        {{- end }}
+      {{- else }}
+          {{- if lt (sub .TotalPages .PageNumber) 4 }}
+            {{- with .First }}
+              {{- partial "base/paginator-number" (dict "pager" . "activePager" $) }}
+            {{- end }}
+            <span class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500">...</span>
+            {{- range last 4 .Pagers }}
+              {{- partial "base/paginator-number" (dict "pager" . "activePager" $) }}
+            {{- end }}
+          {{- else }}
+            {{- with .First }}
+              {{- partial "base/paginator-number" (dict "pager" . "activePager" $) }}
+            {{- end }}
+            <span class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500">...</span>
+            {{- $prevPager := sub .PageNumber 2 }}
+            {{- range seq $prevPager .PageNumber }}
+              {{- with index $.Pagers . }}
+                {{- partial "base/paginator-number" (dict "pager" . "activePager" $) }}
+              {{- end }}
+            {{- end }}
+            <span class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500">...</span>
+            {{- with .Last }}
+              {{- partial "base/paginator-number" (dict "pager" . "activePager" $) }}
+            {{- end }}
+          {{- end }}
+      {{- end }}
+  {{- end }}
+</div>

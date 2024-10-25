@@ -1,0 +1,6 @@
+<p class="font-bold mb-3">{{ T .taxaType | strings.FirstUpper }}</p>
+{{- $taxa := .currentPage.Site.GetPage "taxonomy" .taxaType }}
+{{- range $taxa.Pages.ByTitle }}
+  {{- partialCached "base/item-with-count"
+    (dict "itemCount" (len .Pages) "itemLink" .RelPermalink "itemTitle" .LinkTitle) .RelPermalink }}
+{{- end }}

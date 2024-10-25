@@ -1,0 +1,14 @@
+{{- $type := .Get "type" | default "link"}}
+{{- $text := .Get "text" }}
+{{- $link := .Get "link" }}
+{{- $url := (.Site.GetPage $link).RelPermalink}}
+{{- $class := .Get "class" -}}
+{{- if eq $type "link" }}
+  <a href="{{ $url }}" class="text-cyan-700 {{ $class }}">{{ $text }}</a>
+{{- else }}
+  <a
+    href="{{ $url }}"
+    class="inline-flex items-center gap-x-2 rounded-md bg-cyan-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 {{ $class }}">
+    {{ $text }}
+  </a>
+{{ end }}

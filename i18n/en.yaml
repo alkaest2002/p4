@@ -1,0 +1,25 @@
+answers: answers
+answersButton: go to your answers
+answersIndex: no.
+categories: categories
+chapter: chapter {{ . }}
+choose: choose one of the two given options
+chooseTip: use the arrows &uarr; &darr; to select response options and &larr; &rarr; to navigate between questions
+compressedAnswersInfo: Keep this code. You will need it to compare your answers with someone else's
+item: question
+latency: latency
+next: next
+previous: prev
+read: read
+readingTime:
+  one: "estimated reading time: {{ . }} minute"
+  other: "estimated reading time: {{ . }} minutes"
+related: similar articles
+sec: sec
+sortAnswersByItemId: sort by question
+sortAnswersByLatency: sort by latency
+tags: tags
+toc: table of contents
+type: your type code
+typeInfo: read the information about your type code
+typeReadButton: read type code information

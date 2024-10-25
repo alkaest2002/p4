@@ -1,0 +1,12 @@
+{{- $urls := dict }}
+{{- $types := slice "002 Artisans" "003 Guardians" "004 Idealists" "005 Rationalists" }}
+{{- range $types }}
+  {{- $section := $.Site.GetPage . }}
+  {{- range $section.Pages }}
+    {{- $urls = $urls | merge (dict .Title .RelPermalink) }}
+  {{- end }}
+{{- end }}
+{{- range (.Site.GetPage "kts").Pages }}
+  {{- $urls = $urls | merge (dict .Layout .RelPermalink) }}
+{{- end }}
+{{- $urls | jsonify }}

@@ -1,0 +1,32 @@
+it:
+  languageCode: it-IT
+  languageName: Italiano
+  title: P4
+  weight: 1
+  menus:
+    main:
+      - name: modello concettuale
+        pageRef: /book/intro
+        weight: 1
+      - name: conosci te stesso
+        pageRef: /kts
+        weight: 2
+      - name: chi siamo
+        pageRef: /about
+        weight: 3
+en:
+  languageCode: en-US
+  languageName: English
+  title: P4
+  weight: 2
+  menus:
+    main:
+      - name: conceptual framework
+        pageRef: /book/intro
+        weight: 1
+      - name: know yourself
+        pageRef: /kts
+        weight: 2
+      - name: about
+        pageRef: /about
+        weight: 3

@@ -1,0 +1,4 @@
+author: "Pierpaolo Calanna"
+description: "Personal blog site"
+paginateSize:
+  base: 5

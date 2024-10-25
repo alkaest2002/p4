@@ -1,0 +1,60 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html {
+	scroll-behavior: smooth;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+#content p {
+    @apply my-3;
+}
+
+#content ul {
+    @apply my-6 ml-3 list-disc list-inside;
+}
+
+#content ul li {
+    @apply my-1;
+}
+
+
+/*********************************************/
+/* ALPINE RELATED  CSS                       */
+/*********************************************/
+
+[x-cloak] {
+    display: none !important;
+}
+
+/*********************************************/
+/* HTMX RELATED                              */
+/*********************************************/
+
+.my-indicator {
+    display: none;
+}
+
+.htmx-request .my-indicator {
+    display: inline;
+}
+
+.htmx-request.my-indicator {
+    display: inline;
+}
+
+#fade-me-in.htmx-added {
+    opacity: 0;
+}
+
+#fade-me-in {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+    <head>
+        <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+        {{- partialCached "base/head" . }}
+    </head>
+    <body
+        hx-boost="true"
+        hx-swap="transition:true"
+        hx-push-url="true"
+        hx-history="false"
+        x-ref="base"
+        x-data="base"
+        x-init="initBase"
+        x-bind="htmxEvents"
+        data-env="{{ hugo.IsDevelopment }}"
+        class="min-h-screen flex flex-col max-w-screen-lg mx-auto text-gray-700"
+    >
+        {{- partial "base/navbar" . }}
+        {{- partial "base/breadcrumbs" . }}
+        <div class="flex-grow flex flex-col p-9">
+            {{- block "main" . }} {{- end }}
+            {{- partialCached "base/footer" . }}
+        </div>
+    </body>
+</html>

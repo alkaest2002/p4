@@ -1,0 +1,11 @@
+{{- define "main" }}
+<div class="flex-grow w-full">
+    <div class="mb-6">
+        <h1 class="text-xl font-bold">{{ .Title }}</h1>
+        <span class="text-sm text-gray-500">
+            {{ T "readingTime" .ReadingTime }}
+        </span>
+    </div>
+    <div id="content">{{ .Content }}</div>
+</div>
+{{- end }}

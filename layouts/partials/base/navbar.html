@@ -1,0 +1,22 @@
+<nav>
+  <div class="flex flex-wrap items-center justify-between mx-auto p-9">
+    <div>
+      <a href="{{ .Site.Home.RelPermalink }}" class="text-3xl font-extrabold">
+        &#10063; {{ .Site.Title }}
+      </a>
+    </div>
+    <div class="flex gap-3 items-center">
+      {{ $menu := .Site.GetPage "menu" }}
+      <a
+        href="{{ $menu.RelPermalink }}"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg"
+        >
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+        <span class="hidden">menu</span>
+      </a>
+    </div>
+  </div>
+</nav>

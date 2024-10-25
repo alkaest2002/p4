@@ -1,0 +1,17 @@
+{{- define "main" }}
+{{ $currentPage := . }}
+{{ $chapters := .Pages.ByParam "chapter" }}
+{{ $chapters = where $chapters "Params.chapter" "gt" 0 }}
+{{ $paginator := .Paginate $chapters 10 }}
+<div class="flex-grow w-full">
+    <div id="content" class="mb-9">{{ .Content }}</div>
+    <div>
+        {{- range $paginator.Pages }}
+            {{- .Render "summary" }}
+        {{- end }}
+        {{ if gt $paginator.TotalPages 1 }}
+            {{- partial "base/paginator" $paginator }}
+        {{- end }}
+    </div>
+</div>
+{{- end }}

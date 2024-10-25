@@ -1,0 +1,5 @@
+{{- $data := slice }}
+{{- range .Pages }}
+  {{- $data = $data | append (dict "id" .Title "text" .Params.text "options" .Params.options) }}
+{{- end }}
+{{- $data | jsonify}}

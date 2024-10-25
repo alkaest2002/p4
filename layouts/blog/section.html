@@ -1,0 +1,29 @@
+{{- define "main" }}
+{{ $currentPage := . }}
+{{ $postsByDataReversed := .Pages.ByDate.Reverse }}
+{{ $paginator := .Paginate $postsByDataReversed 4 }}
+<div class="flex-grow w-full">
+    <div class="mb-12">
+        {{- range $paginator.Pages }}
+            {{- .Render "post" }}
+        {{- end }}
+        {{ if gt $paginator.TotalPages 1 }}
+            {{- partial "base/paginator" $paginator }}
+        {{- end }}
+    </div>
+    <div class="flex flex-wrap gap-10">
+        {{- with .Site.Taxonomies.categories }}
+            <div class="flex-grow px-9 py-6 bg-gray-200 rounded-lg shadow">
+                {{- partialCached "base/taxa"
+                    (dict "currentPage" $currentPage "taxaType" "categories") "taxaCategories" }}
+            </div>
+        {{- end }}
+        {{- with .Site.Taxonomies.tags }}
+            <div class="flex-grow px-9 py-6 bg-gray-200 rounded-lg shadow">
+                {{- partialCached "base/taxa"
+                    (dict "currentPage" $currentPage "taxaType" "tags") "taxaTags" }}
+            </div>
+        {{- end }}
+    </div>
+</div>
+{{- end }}

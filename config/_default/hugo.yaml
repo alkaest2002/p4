@@ -1,0 +1,17 @@
+title: Blog
+description: Personal blog
+baseURL: http://localhost:9000
+
+pluralizeListTitles: false
+capitalizeListTitles: false
+
+timeZone: Europe/Rome
+defaultContentLanguage: it
+defaultContentLanguageInSubdir: false
+enableMissingTranslationPlaceholders: true
+
+minify: false
+disableKinds:
+  - sitemap
+  - robotsTXT
+  - RSS
