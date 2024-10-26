@@ -25,10 +25,10 @@ export default () => ({
     [":key"]: "itemId"
   },
 
-  item(itemTextWithAnswer, optionValue, answer) {
+  item(itemText, optionValue, answer) {
     return {
       "x-text"() {
-        return itemTextWithAnswer
+        return itemText
       },
       ":class"() {
         return answer.answerValue === optionValue
