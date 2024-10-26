@@ -3,7 +3,10 @@ export default () => ({
   lodaing: false,
   error: false,
   clickedButton: null,
-  highilightClass: "bg-indigo-50",
+  textBaseClass: "text-gray-500 ",
+  textHighilightClass: "text-indigo-700",
+  optionBaseClass: "bg-transparent",
+  optionHighlightClass: "bg-indigo-50",
   epoch: Date.now(),
 
   async initQuestionnaire() {
@@ -125,8 +128,8 @@ export default () => ({
 
     [":class"]() {
       return this.$store.questionnaire.currentAnswerValue === "a"
-        ? this.highilightClass
-        : "bg-tranpsarent"
+        ? this.optionHighlightClass
+        : this.optionBaseClass
     },
 
     ["@click.prevent"]($event) {
@@ -144,8 +147,8 @@ export default () => ({
 
     [":class"]() {
       return this.$store.questionnaire.currentAnswerValue === "b"
-        ? this.highilightClass
-        : "bg-tranpsarent"
+        ? this.optionHighlightClass
+        : this.optionBaseClass
     },
 
     ["@click.prevent"]($event) {
@@ -171,8 +174,8 @@ export default () => ({
 
     [":class"]() {
       return this.clickedButton === "next"
-        ? this.highilightClass
-        : "bg-tranpsarent"
+        ? this.textHighilightClass
+        : this.textBaseClass
     },
   },
 
@@ -189,8 +192,8 @@ export default () => ({
 
     [":class"]() {
       return this.clickedButton === "prev"
-        ? this.highilightClass
-        : "bg-tranpsarent"
+        ? this.textHighilightClass
+        : this.textBaseClass
     }
   }
 });
