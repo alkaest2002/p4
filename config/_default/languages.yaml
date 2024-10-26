@@ -11,8 +11,8 @@ it:
       - name: conosci te stesso
         pageRef: /kts
         weight: 2
-      - name: chi siamo
-        pageRef: /about
+      - name: credits
+        pageRef: /credits
         weight: 3
 en:
   languageCode: en-US
@@ -27,6 +27,6 @@ en:
       - name: know yourself
         pageRef: /kts
         weight: 2
-      - name: about
-        pageRef: /about
+      - name: credits
+        pageRef: /credits
         weight: 3
