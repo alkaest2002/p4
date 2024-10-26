@@ -27,19 +27,19 @@
       <a
           x-bind="sortBy"
           href="#"
-          class="inline-flex items-center gap-x-2 rounded-md bg-cyan-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          class="inline-flex items-center gap-x-2 rounded-full bg-cyan-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
             <span x-show="orderBy === 'itemId'">{{ T "sortAnswersByLatency" }}</span>
             <span x-cloak x-show="orderBy === 'latency'">{{ T "sortAnswersByItemId" }}</span>
         </a>
       <div class="mt-3 flex flex-col gap-3">
         <template x-bind="items">
-          <div class="p-3 text-wrap border rounded-lg shadow-md">
+          <div class="p-4 text-wrap border rounded-lg shadow-md">
             <div class="flex justify-between">
-              <div x-text="itemId" class="font-semibold"></div>
+              <div x-text="itemId.slice(-2)" class="font-extrabold text-xl"></div>
               <div class="text-sm"><span x-text="(answer.latency / 1000).toFixed(2)"></span> {{ T "sec" }}</div>
             </div>
             <div class="mt-3">
-              <p x-bind="item(itemA, 'a', answer)" class="mb-1"></p>
+              <p x-bind="item(itemA, 'a', answer)"></p>
               <p x-bind="item(itemB, 'b', answer)"></p>
             </div>
           </div>

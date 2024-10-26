@@ -8,13 +8,13 @@
     </div>
     <div class="mt-9 text-center">
       {{- range .Site.Menus.main.ByWeight }}
-      <a href="{{ .URL }}" class="block py-2 px-3 hover:bg-slate-200">{{ .Name | upper }}
+      <a href="{{ .URL }}" class="block py-2 px-5 hover:bg-blue-50">{{ .Name | upper }}
       </a>
       {{- end }}
     </div>
     <div class="my-3 border-t border-slate-400"></div>
     {{- range .Sites }}
-      <a href="{{ .Home.RelPermalink }}" class="block py-2 px-3 hover:bg-slate-200">
+      <a href="{{ .Home.RelPermalink }}" class="block py-2 px-5 hover:bg-blue-50">
         <span class="inline-block w-6 font-semibold">{{ .Language | upper }}</span> <span>{{ .Language.LanguageName
           }}</span>
       </a>
