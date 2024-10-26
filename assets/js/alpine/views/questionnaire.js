@@ -10,6 +10,10 @@ export default () => ({
     this.$watch("$store.questionnaire.currentItemIndex", () => this.epoch = Date.now());
   },
 
+  destroy() {
+    this.$store.questionnaire.resetItemIndex();
+  },  
+
   get canNavigateAway() {
     return this.$store.questionnaire.currentAnswerValue;
   },

@@ -73,11 +73,13 @@ export default (Alpine) => ({
     return "EINSFTJP".split("").filter(el => type.indexOf(el) > -1).join("");
   },
 
+  resetItemIndex() {
+    this.currentItemIndex = 0;
+  },
+
   setItems(items) {
     this.items = items;
-    this.currentItemIndex = this.answers.length === 0
-      ? 0
-      : Math.min(this.answers.length, this.items.length-1);
+    this.currentItemIndex = 0;
   },
 
   setAnswer(answerValue, answerlatency) {
