@@ -15,6 +15,6 @@ Dopo il **capitolo 1**, i lettori sono incoraggiati a {{< base/link type="link" 
 
 Ogni capitolo include descrizioni delle cosiddette **varianti di ruolo**, che offrono più articolati approfondimenti. Leggere gli altri termperamenti può fornire ulteriori spunti di riflessione e consentire al lettore di conseguire una conoscenza più organica del modello teorico. 
 
-A prescindere da come si scelga di procedere, che si leggano queste pagine in modo sequenziale o saltando da una sezione all'altra, che si cerchi una conoscenza sistematica o schegge minute di illuminazione personale, l'approccio -- in definitiva -- dipenderà dal temperamento del lettore.
+A prescindere da come si scelga di procedere, che si leggano queste pagine in modo sequenziale o saltando da una sezione all'altra, che si cerchi una conoscenza sistematica o schegge minute di illuminazione personale, l'approccio -- in definitiva -- dipenderà dal temperamento dei lettori.
 
 {{< base/link type="button" text="continua a leggere" link="/book" class="mt-3 mr-1" >}}

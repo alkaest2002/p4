@@ -16,6 +16,6 @@ After **Chapter 1**, readers are encouraged to {{< base/link type="link" text="c
 
 Each chapter includes descriptions of the so-called **role variants**, offering more detailed insights. Reading about the other temperaments can provide further reflections and allow the reader to achieve a more holistic understanding of the theoretical model.
 
-Regardless of how one chooses to proceed, whether reading these pages sequentially or skipping from one section to another, seeking systematic knowledge or brief moments of personal insight, the approach — ultimately — will depend on the reader's temperament.
+Regardless of how one chooses to proceed, whether reading these pages sequentially or skipping from one section to another, seeking systematic knowledge or brief moments of personal insight, the approach — ultimately — will depend on the readers' temperament.
 
 {{< base/link type="button" text="continue reading" link="/book" class="mt-3 mr-1" >}}

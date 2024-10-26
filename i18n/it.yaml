@@ -18,7 +18,7 @@ readingTime:
   one: "tempo stimato di lettura: {{ . }} minuto"
   other: "tempo stimato di lettura: {{ . }} minuti"
 related: articoli simili
-rightsReserved: I contenuti del sito sono concessi con licenza CC BY-NC-SA 4.0.
+rightsReserved: I contenuti del sito sono concessi con licenza.
 sec: sec
 sortAnswersByItemId: ordina per quesito
 sortAnswersByLatency: ordina per latenza

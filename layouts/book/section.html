@@ -4,7 +4,13 @@
 {{ $chapters = where $chapters "Params.chapter" "gt" 0 }}
 {{ $paginator := .Paginate $chapters 10 }}
 <div class="flex-grow w-full">
-    <div id="content" class="mb-9">{{ .Content }}</div>
+    <div class="mb-6">
+        <h1 class="text-xl font-bold">{{ .Title }}</h1>
+        <span class="text-sm text-gray-500">
+            {{ T "readingTime" .ReadingTime }}
+        </span>
+    </div>
+    <div id="content" class="mb-6">{{ .Content }}</div>
     <div>
         {{- range $paginator.Pages }}
             {{- .Render "summary" }}
