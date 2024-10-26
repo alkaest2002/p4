@@ -8,7 +8,7 @@ export default () => ({
 
   async initQuestionnaire() {
     this.$watch("$store.questionnaire.currentItemIndex", () => this.epoch = Date.now());
-    // just in case
+    // just in case (this data should already be present by now)
     if (this.$store.questionnaire.items.length == 0) {
       try {
         this.loading = true;
@@ -162,8 +162,10 @@ export default () => ({
       if (this.$store.questionnaire.isComplete && this.$store.questionnaire.isLastItem) {
         this.canNavigateAway && this.$store.url.goToPage("results");
       } else {
-        this.canNavigateAway && this.$store.questionnaire.goToNextItem();
-        setTimeout(() => this.clickedButton = null, 150);
+        setTimeout(() => {
+          this.canNavigateAway && this.$store.questionnaire.goToNextItem();
+          this.clickedButton = null;
+        }, 150);
       }
     },
 
@@ -179,8 +181,10 @@ export default () => ({
 
     ["@click.prevent"]() {
       this.clickedButton = "prev";
-      this.$store.questionnaire.goToPreviousItem();
-      setTimeout(() => this.clickedButton = null, 150);
+      setTimeout(() => {
+        this.$store.questionnaire.goToPreviousItem();
+        this.clickedButton = null; 
+      }, 150);
     },
 
     [":class"]() {
