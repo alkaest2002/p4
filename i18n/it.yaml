@@ -10,6 +10,7 @@ compressedAnswersInfo: Conserva questo codice. Ti servirà per confrontare le tu
 item: quesito
 latency: latenza
 next: succ
+noResults: "&rarr; Attenzione! Completa il test prima di accedere a questa pagina."
 previous: prec
 read: leggi
 readingTime:
