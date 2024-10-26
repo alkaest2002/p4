@@ -16,7 +16,7 @@ export default () => ({
         const items = await fetch(`${urlBase}items/index.json`).then(res => res.json());
         const urls = await fetch(`${urlBase}index.json`).then(res => res.json());
         this.$store.questionnaire.setItems(items);
-        this.$store.url.setUrl(urls);
+        this.$store.navigation.setUrls(urls);
       } catch (err) {
         this.error = true;
       } finally {
@@ -160,7 +160,7 @@ export default () => ({
     ["@click.prevent"]() {
       this.clickedButton = "next";
       if (this.$store.questionnaire.isComplete && this.$store.questionnaire.isLastItem) {
-        this.canNavigateAway && this.$store.url.goToPage("results");
+        this.canNavigateAway && this.$store.navigation.goToPage("results");
       } else {
         setTimeout(() => {
           this.canNavigateAway && this.$store.questionnaire.goToNextItem();

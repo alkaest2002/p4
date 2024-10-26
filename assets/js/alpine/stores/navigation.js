@@ -8,17 +8,17 @@ export default (Alpine) => ({
   
   ...initState(stateFn, Alpine),
 
+  setUrls(urls) {
+    this.urls = urls;
+  },
+
   getUrlPage(page) {
     return this.urls[page];
   },
 
-  setUrl(urls) {
-    this.urls = urls;
-  },
-
   goToPage(page) {
     const url = this.getUrlPage(page);
-    (url) && window.htmx.ajax("GET", url);
+    url && window.htmx.ajax("GET", url);
   },
 
   wipeState(omit = []) {

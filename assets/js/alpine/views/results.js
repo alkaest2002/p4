@@ -9,13 +9,13 @@ export default () => ({
 
   "typeLink": {
     ["@click.prevent"]() {
-      this.$store.url.goToPage(this.$store.questionnaire.type);
+      this.$store.navigation.goToPage(this.$store.questionnaire.type);
     },
   },
 
   "answersLink": {
     ["@click.prevent"]() {
-      this.$store.url.goToPage("answers");
+      this.$store.navigation.goToPage("answers");
     },
   },
 
