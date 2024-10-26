@@ -14,7 +14,9 @@ Dopo il **capitolo 1**, i lettori sono incoraggiati a {{< base/link type="link" 
 - {{< base/link text="Capitolo 4: gli idealisti (NF)" link="book/004-idealists/" >}}
 - {{< base/link text="Capitolo 5: i razionalisti (NT)" link="book/005-rationalists/" >}}
 
-Ogni capitolo include descrizioni delle cosiddette **varianti di ruolo**, che offrono più articolati approfondimenti. Leggere gli altri termperamenti può fornire ulteriori spunti di riflessione e consentire al lettore di conseguire una conoscenza più organica del modello teorico. 
+Ogni capitolo include descrizioni delle cosiddette **varianti di ruolo**, che offrono più articolati approfondimenti. 
+
+Leggere le varianti di ruolo all'interno dello stesso temperamento o degli altri temperamenti può fornire ulteriori spunti di riflessione e consentire ai lettori di conseguire una conoscenza più organica del modello teorico. 
 
 A prescindere da come si scelga di procedere, che si leggano queste pagine in modo sequenziale o saltando da una sezione all'altra, che si cerchi una conoscenza sistematica o schegge minute di illuminazione personale, l'approccio -- in definitiva -- dipenderà dal temperamento dei lettori.
 
