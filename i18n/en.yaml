@@ -19,6 +19,7 @@ readingTime:
   one: "estimated reading time: {{ . }} minute"
   other: "estimated reading time: {{ . }} minutes"
 related: similar articles
+rightsReserved: The contents of the site are licensed under CC BY-NC-SA 4.0.
 sec: sec
 sortAnswersByItemId: sort by question
 sortAnswersByLatency: sort by latency

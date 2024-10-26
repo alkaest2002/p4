@@ -1,7 +1,7 @@
 it:
   languageCode: it-IT
   languageName: Italiano
-  title: P4
+  title: TMP-4
   weight: 1
   menus:
     main:
@@ -17,7 +17,7 @@ it:
 en:
   languageCode: en-US
   languageName: English
-  title: P4
+  title: TMP-4
   weight: 2
   menus:
     main:
