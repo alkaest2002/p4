@@ -1,6 +1,7 @@
 export default () => ({
 
-  error: true,
+  lodaing: false,
+  error: false,
   clickedButton: null,
   highilightClass: "bg-indigo-50",
   epoch: Date.now(),
@@ -11,6 +12,7 @@ export default () => ({
     this.$watch("$store.questionnaire.currentItemIndex", () => this.epoch = Date.now());
     // just in case
     if (this.$store.questionnaire.items.length == 0) {
+      this.loading = true;
       const urlBase = this.$refs.questionnaire.dataset.urlBase;
       const urlItems = `${urlBase}items/index.json`;
       try {
@@ -20,6 +22,8 @@ export default () => ({
         this.$store.url.setUrl(urls);
       } catch (err) {
         this.error = true;
+      } finally {
+        this.loading = false;
       }
     }
   },
@@ -53,6 +57,18 @@ export default () => ({
     this.$store.questionnaire.setAnswer(option, Date.now()-this.epoch);
   },
 
+  "notifyFetching": {
+    ["x-ref"]: "notifyFetching",
+
+    ["x-show"]() {
+      return this.loading;
+    },
+
+    ["x-html"]() {
+      return this.$refs.questionnaire.dataset.fetchingMessage;
+    }
+  },
+
   "notifyError": {
     ["x-ref"]: "notifyError",
 
@@ -69,7 +85,7 @@ export default () => ({
     ["x-ref"]: "item",
 
     ["x-show"]() {
-      return !this.error;
+      return !this.error && !this.loading;
     },
 
     ["@keyup.window.prevent"]({ key }) {

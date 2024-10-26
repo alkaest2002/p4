@@ -1,5 +1,6 @@
 {{- define "main" }}
 {{- $urlBase := .Site.Home.RelPermalink }}
+{{- $fetchingMessage := T "fetchingMessage" }}
 {{- $fetchErrorMessage := T "fetchErrorMessage" }}
 <div class="flex-grow w-full">
   <div
@@ -8,8 +9,14 @@
     x-init="initQuestionnaire"
     x-data="questionnaire"
     data-url-base="{{ $urlBase }}"
+    data-fetching-message="{{ $fetchingMessage }}"
     data-fetch-error-message="{{ $fetchErrorMessage }}"
   >
+    <div
+      x-bind="notifyFetching"
+      class="text-gray-500 italic"
+    >
+    </div>
     <div
       x-bind="notifyError"
       class="text-gray-500 italic"

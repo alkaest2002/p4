@@ -7,6 +7,7 @@ choose: choose between one of the two proposed options
 chooseTip: use the &uarr; &darr; arrows to select answer options and the &larr; &rarr; arrows to navigate between questions
 compressedAnswersTitle: your answers code
 compressedAnswersInfo: keep this code. You will need it to compare your answers with another person's answers
+fetchingMessage: "&rarr; Questionnaire items are loading. Please wait..."
 fetchErrorMessage: "&rarr; An error occurred while loading the data. Please reload the page."
 item: question
 latency: latency
