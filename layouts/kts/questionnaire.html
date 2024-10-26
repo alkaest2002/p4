@@ -34,14 +34,14 @@
       <p class="mt-1 mb-6 text-sm text-gray-500">{{ T "chooseTip" | strings.FirstUpper | safeHTML }}</p>
       <div>
         <div class="mb-6 flex flex-col gap-4">
-          <div x-bind="optionA" class="px-4 py-6 font-semibold text-gray-600 rounded border shadow-md cursor-pointer">
+          <div x-bind="optionA" class="px-4 py-6 font-semibold text-gray-600 rounded-lg border shadow-md cursor-pointer">
           </div>
-          <div x-bind="optionB" class="px-4 py-6 font-semibold text-gray-600 rounded border shadow-md cursor-pointer">
+          <div x-bind="optionB" class="px-4 py-6 font-semibold text-gray-600 rounded-lg border shadow-md cursor-pointer">
           </div>
         </div>
       </div>
       <div>
-        <nav class="flex items-center justify-between py-3 text-gray-500 border-t border-gray-200 bg-white" aria-label="Pagination">
+        <nav class="flex items-center justify-between py-3 border-t border-gray-200 bg-white" aria-label="Pagination">
           <button
             x-bind="prevButton"
             type="submit"
