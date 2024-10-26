@@ -1,6 +1,7 @@
 ---
 title: Introduction
 layout: introduction
+url: theory/introduction
 ---
 
 The most effective approach to understanding **the conceptual model** varies from person to person. Some guidelines are provided to facilitate decision-making.

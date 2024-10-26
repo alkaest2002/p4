@@ -1,6 +1,7 @@
 ---
 title: Introduzione
 layout: introduction
+url: libro/introduzione
 ---
 L'approccio più efficace per comprendere **il modello concettuale** differisce da persona a persona. Vengono fornite alcune indicazioni per facilitare la presa di decisione.
 
