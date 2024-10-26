@@ -3,12 +3,15 @@ answersButton: go to your answers
 answersIndex: no.
 categories: categories
 chapter: chapter {{ . }}
-choose: choose one of the two given options
-chooseTip: use the arrows &uarr; &darr; to select response options and &larr; &rarr; to navigate between questions
-compressedAnswersInfo: Keep this code. You will need it to compare your answers with someone else's
+choose: choose between one of the two proposed options
+chooseTip: use the &uarr; &darr; arrows to select answer options and the &larr; &rarr; arrows to navigate between questions
+compressedAnswersTitle: your answers code
+compressedAnswersInfo: keep this code. You will need it to compare your answers with another person's answers
+fetchErrorMessage: "&rarr; An error occurred while loading the data. Please reload the page."
 item: question
 latency: latency
 next: next
+noResults: "&rarr; Warning! Complete the test before accessing this page."
 previous: prev
 read: read
 readingTime:
@@ -20,6 +23,6 @@ sortAnswersByItemId: sort by question
 sortAnswersByLatency: sort by latency
 tags: tags
 toc: table of contents
-type: your type code
-typeInfo: read the information about your type code
-typeReadButton: read type code information
+typeTitle: your type code
+typeInfo: read information about your type code
+typeReadButton: go to your type code

@@ -1,13 +1,27 @@
 export default () => ({
 
+  error: true,
   clickedButton: null,
   highilightClass: "bg-indigo-50",
   epoch: Date.now(),
   
-  initQuestionnaire() {
+  async initQuestionnaire() {
     this.currentSelectedOption = this.$store.questionnaire.currentAnswerValue;
     this.elapsedEpoch = this.$store.questionnaire.currentAnswer?.latency;
     this.$watch("$store.questionnaire.currentItemIndex", () => this.epoch = Date.now());
+    // just in case
+    if (this.$store.questionnaire.items.length == 0) {
+      const urlBase = this.$refs.questionnaire.dataset.urlBase;
+      const urlItems = `${urlBase}items/index.json`;
+      try {
+        const items = await fetch(urlItems).then(res => res.json());
+        const urls = await fetch(`${urlBase}index.json`).then(res => res.json());
+        this.$store.questionnaire.setItems(items);
+        this.$store.url.setUrl(urls);
+      } catch (err) {
+        this.error = true;
+      }
+    }
   },
 
   destroy() {
@@ -39,8 +53,24 @@ export default () => ({
     this.$store.questionnaire.setAnswer(option, Date.now()-this.epoch);
   },
 
+  "notifyError": {
+    ["x-ref"]: "notifyError",
+
+    ["x-show"]() {
+      return this.error;
+    },
+
+    ["x-html"]() {
+      return this.$refs.questionnaire.dataset.fetchErrorMessage;
+    }
+  },
+
   "item": {
     ["x-ref"]: "item",
+
+    ["x-show"]() {
+      return !this.error;
+    },
 
     ["@keyup.window.prevent"]({ key }) {
       const functioToCall = this.keyboardActions()[key.toLowerCase()];

@@ -9,7 +9,7 @@ export default () => ({
       if (res.indexOf("canonical") > -1) {
         const match = res.match(/http-equiv.+url=(.+)"/m);
         detail.shouldSwap = !match;
-        match && window.htmx.ajax("GET", match[1]);
+        match.length > 0 && window.htmx.ajax("GET", match[1]);
       }
     }
   },

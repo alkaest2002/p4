@@ -5,8 +5,9 @@ categories: categorie
 chapter: capitolo {{ . }}
 choose: scegli tra una delle due opzioni proposte
 chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e le frecce &larr; &rarr; per navigare tra i quesiti
-compressedAnswersTitle: Il tuo codice delle risposte
-compressedAnswersInfo: Conserva questo codice. Ti servirà per confrontare le tue risposte con le risposte di un'altra persona
+compressedAnswersTitle: il tuo codice delle risposte
+compressedAnswersInfo: conserva questo codice. Ti servirà per confrontare le tue risposte con le risposte di un'altra persona
+fetchErrorMessage: "&rarr; Si è verificato un errore nel caricamento dei dati. Per favore, ricarica la pagina."
 item: quesito
 latency: latenza
 next: succ

@@ -22,7 +22,7 @@
       <a
           x-bind="sortBy"
           href="#"
-          class="inline-flex items-center gap-x-2 rounded-full bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          class="inline-flex items-center gap-x-2 rounded-lg bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
             <span x-show="orderBy === 'itemId'">{{ T "sortAnswersByLatency" }}</span>
             <span x-cloak x-show="orderBy === 'latency'">{{ T "sortAnswersByItemId" }}</span>
         </a>
