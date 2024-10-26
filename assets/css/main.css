@@ -17,6 +17,10 @@ button:focus {
     @apply my-3;
 }
 
+#content a {
+    @apply text-indigo-700 underline;
+}
+
 #content ul {
     @apply my-6 ml-3 list-disc list-inside;
 }
