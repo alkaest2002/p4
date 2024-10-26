@@ -13,6 +13,7 @@
     >
         <div class="flex-grow flex flex-col p-9">
             {{- block "main" . }} {{- end }}
+            {{- partialCached "base/footer" . }}
         </div>
     </body>
 </html>

@@ -14,6 +14,6 @@
         </svg>
       </a>
     </div>
-    <p class="mt-2 text-center text-xs">&copy; {{- dateFormat "2006" now }} P4, Inc. All rights reserved.</p>
+    <p class="mt-2 text-center text-xs">{{- dateFormat "2006" now }} {{ .Site.Title }}. {{ T "rightsReserved" }}</p>
   </div>
 </footer>
