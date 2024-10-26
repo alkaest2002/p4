@@ -1,7 +1,6 @@
 answers: answers
 answersButton: go to your answers
 answersIndex: no.
-categories: categories
 chapter: chapter {{ . }}
 choose: choose between one of the two proposed options
 chooseTip: use the &uarr; &darr; arrows to select answer options and the &larr; &rarr; arrows to navigate between questions
@@ -23,7 +22,6 @@ rightsReserved: The contents of the site are licensed under CC BY-NC-SA 4.0.
 sec: sec
 sortAnswersByItemId: sort by question
 sortAnswersByLatency: sort by latency
-tags: tags
 toc: table of contents
 typeTitle: your type code
 typeInfo: read information about your type code

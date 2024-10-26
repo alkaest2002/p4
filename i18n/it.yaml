@@ -1,7 +1,6 @@
 answers: risposte
 answersButton: vai alle tue risposte
 answersIndex: nr.
-categories: categorie
 chapter: capitolo {{ . }}
 choose: scegli tra una delle due opzioni proposte
 chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e le frecce &larr; &rarr; per navigare tra i quesiti
@@ -23,7 +22,6 @@ rightsReserved: I contenuti del sito sono concessi con licenza CC BY-NC-SA 4.0.
 sec: sec
 sortAnswersByItemId: ordina per quesito
 sortAnswersByLatency: ordina per latenza
-tags: tag
 toc: sommario
 typeTitle: il tuo codice tipo
 typeInfo: leggi le informazioni riguardanti il tuo codice tipo
