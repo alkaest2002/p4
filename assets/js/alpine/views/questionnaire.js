@@ -1,7 +1,7 @@
 export default () => ({
 
   clickedButton: null,
-  highilightClass: "bg-blue-50",
+  highilightClass: "bg-indigo-50",
   epoch: Date.now(),
   
   initQuestionnaire() {
@@ -87,7 +87,6 @@ export default () => ({
     },
 
     ["@click.prevent"]($event) {
-      console.log($event.pointerType)
       this.setAnswer("a");
       [ "mouse", "touch", "pen" ].includes($event.pointerType) && this.$refs.nextButton.click();
     }

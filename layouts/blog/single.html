@@ -14,7 +14,7 @@
                     {{ $totElements := len . }}
                     <span class="text-md font-semibold my-3">{{ T "categories" | strings.FirstUpper }}</span>:
                     {{- range $index, $element := . }}
-                    <a class="text-cyan-600" href="{{ $element.RelPermalink }}">{{ $element.LinkTitle }}</a>
+                    <a class="text-indigo-600" href="{{ $element.RelPermalink }}">{{ $element.LinkTitle }}</a>
                     {{- if lt (add $index 1) $totElements }} &middot; {{- end }}
                     {{- end }}
                 </div>
@@ -24,7 +24,7 @@
                     {{ $totElements := len . }}
                     <span class="text-md font-semibold my-3">{{ T "tags" | strings.FirstUpper }}</span>:
                     {{- range $index, $element := . }}
-                    <a class="text-cyan-600" href="{{ $element.RelPermalink }}">{{ $element.LinkTitle }}</a>
+                    <a class="text-indigo-600" href="{{ $element.RelPermalink }}">{{ $element.LinkTitle }}</a>
                     {{- if lt (add $index 1) $totElements }} &middot; {{- end }}
                     {{- end }}
                 </div>
@@ -37,7 +37,7 @@
                 <p class="text-md font-semibold my-3">{{ T "related" | strings.FirstUpper }}</p>
                 <ul class="list-disc list-inside">
                     {{ range . }}
-                    <li><a class="text-cyan-600" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    <li><a class="text-indigo-600" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
                     {{ end }}
                 </ul>
             </div>
@@ -49,7 +49,7 @@
             {{- with .Fragments.HeadingsMap }}
             {{ range . }}
             <div class="p-2 border-b border-slate-200">
-                <a class="text-cyan-600" href="#{{ .ID }}">{{ .Title }}</a>
+                <a class="text-indigo-600" href="#{{ .ID }}">{{ .Title }}</a>
             </div>
             {{ end }}
             {{- end }}
