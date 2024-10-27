@@ -18,7 +18,7 @@ export default (Alpine) => ({
 
   goToPage(page) {
     const url = this.getUrlPage(page);
-    this.goToPage(url);
+    this.goToUrl(url);
   },
 
   goToUrl(url) {

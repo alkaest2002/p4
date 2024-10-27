@@ -6,8 +6,8 @@ export default () => ({
     ["x-ref"]: "consentButton",
     
     ["@click.prevent"]() {
-      this.$store.app.gdpr = true;
-      this.$store.navigation.goToUrl(this.$store.app.requestedPath);
+      this.gdpr = true;
+      this.$store.navigation.goToUrl(this.requestedPath);
     }
   },
 });

@@ -12,10 +12,12 @@ export default () => ({
   async initQuestionnaire() {
     this.$watch("$store.questionnaire.currentItemIndex", () => this.epoch = Date.now());
     // just in case (this data should already be present by now)
-    if (this.$store.questionnaire.items.length == 0) {
+    if (
+      this.$store.questionnaire.items.length == 0 
+        || Object.values(this.$store.navigation.urls || []).length == 0) {
       try {
         this.loading = true;
-        const urlBase = this.$refs.questionnaire.dataset.urlBase;
+        const urlBase = this.$refs.base.dataset.urlBase;
         const items = await fetch(`${urlBase}items/index.json`).then(res => res.json());
         const urls = await fetch(`${urlBase}index.json`).then(res => res.json());
         this.$store.questionnaire.setItems(items);
