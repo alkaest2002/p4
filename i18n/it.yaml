@@ -6,6 +6,7 @@ choose: scegli tra una delle due opzioni proposte
 chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e le frecce &larr; &rarr; per navigare tra i quesiti
 compressedAnswersTitle: il tuo codice delle risposte
 compressedAnswersInfo: conserva questo codice. Ti servirà per confrontare le tue risposte con le risposte di un'altra persona
+consentButton: accetta & prosegui
 fetchingMessage: "&rarr; I dati si stanno caricando. Per favore attendi..."
 fetchErrorMessage: "&rarr; Si è verificato un errore nel caricamento dei dati. Per favore, ricarica la pagina."
 item: quesito
