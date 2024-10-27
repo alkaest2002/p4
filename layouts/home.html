@@ -1,10 +1,8 @@
 {{- define "main" }}
-{{- $urlBase := .Site.Home.RelPermalink }}
 <div 
   x-data="home"
   x-ref="home"
   x-init="initHome"
-  data-url-base="{{ $urlBase }}"
   class="flex-grow flex justify-center items-center"
 >
     <div class="text-center">{{ .Content }}</div>

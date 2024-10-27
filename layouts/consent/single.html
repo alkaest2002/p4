@@ -1,0 +1,19 @@
+{{- define "main" }}
+<div class="flex-grow w-full">
+    <div x-data="consent">
+        <div class="mb-6">
+            <h1 class="text-xl font-bold">{{ .Title }}</h1>
+            <span class="text-sm text-gray-500">
+                {{ T "readingTime" .ReadingTime }}
+            </span>
+        </div>
+        <div id="content" class="mb-6">{{ .Content }}</div>
+        <a
+          x-bind="consentButton"
+          href="#"
+          class="inline-flex items-center gap-x-2 rounded-lg bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          {{ T "consentButton" }}
+        </a>
+    </div>
+</div>
+{{- end }}

@@ -9,4 +9,13 @@
 {{- range (.Site.GetPage "kts").Pages }}
   {{- $urls = $urls | merge (dict .Layout .RelPermalink) }}
 {{- end }}
+{{- with .Site.GetPage "consent" }}
+  {{- $urls = $urls | merge (dict "consent" .RelPermalink) }}
+{{- end }}
+{{- with .Site.GetPage "menu" }}
+  {{- $urls = $urls | merge (dict "menu" .RelPermalink) }}
+{{- end }}
+{{- with .Site.Home }}
+  {{- $urls = $urls | merge (dict "base" .RelPermalink) }}
+{{- end }}
 {{- $urls | jsonify }}

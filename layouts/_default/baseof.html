@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{{- $urlBase := .Site.Home.RelPermalink }}
+{{- $urlConsent := (.Site.GetPage "consent").RelPermalink }}
 <html lang="{{ .Site.Language }}">
     <head>
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
@@ -14,6 +16,8 @@
         x-init="initBase"
         x-bind="htmxEvents"
         data-env="{{ hugo.IsDevelopment }}"
+        data-url-base="{{ $urlBase }}"
+        data-url-consent="{{ $urlConsent }}"
         class="min-h-screen flex flex-col max-w-screen-lg mx-auto text-gray-700"
     >
         {{- partial "base/navbar" . }}

@@ -1,6 +1,6 @@
 <footer class="bg-white">
   <div class="mx-auto overflow-hidden">
-    <div class="mt-10 flex justify-center space-x-5">
+    <div class="mt-5 flex justify-center space-x-5">
       <a href="https://www.instagram.com/pierpaolocalanna?igsh=MWM3NmlzbHRvOTZwaA%3D%3D&utm_source=qr" target="_blank" hx-boost="false">
         <span class="sr-only">Instagram</span>
         <svg class="h-6 w-6 text-gray-600 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -14,9 +14,11 @@
         </svg>
       </a>
     </div>
-    <p class="mt-2 text-center text-xs">
-      {{- dateFormat "2006" now }} {{ .Site.Title }}.
-      {{ T "rightsReserved" }} <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" class="text-indigo-700">[ CC BY-NC-SA 4.0 ]</a>
+    <p class="mt-2 flex flex-wrap gap-1 justify-center text-center text-xs">
+      <span>
+        [ {{- dateFormat "2006" now }} {{ .Site.Title }}] {{ T "rightsReserved" }}
+      </span>
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" class="text-indigo-700">CC BY-NC-SA 4.0</a>
     </p>
   </div>
 </footer>
