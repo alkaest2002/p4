@@ -2,7 +2,10 @@ export const initState = (stateFn, Alpine) => {
   return stateFn().reduce(
     (acc, [key, defaultValue]) => ({
       ...acc,
-      ...{ [key]: Alpine.$persist(defaultValue).using(sessionStorage) },
+      ...{ [key]: Alpine.$persist(defaultValue)
+          .using(localStorage)
+          .as(`tmp-4_${key}`)
+        },
     }),
     {}
   );

@@ -1,7 +1,7 @@
 export default () => ({
   
   async initHome() {
-    const urlBase = this.$refs.home.dataset.urlBase;
+    const urlBase = this.$refs.base.dataset.urlBase;
     const urlItems = `${urlBase}items/index.json`;
     try {
       const items = await fetch(urlItems).then(res => res.json());

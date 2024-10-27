@@ -3,7 +3,7 @@ export default () => ({
   lodaing: false,
   error: false,
   clickedButton: null,
-  textBaseClass: "text-gray-500 ",
+  textBaseClass: "text-gray-700 ",
   textHighilightClass: "text-indigo-700",
   optionBaseClass: "bg-transparent",
   optionHighlightClass: "bg-indigo-50",
@@ -115,7 +115,7 @@ export default () => ({
 
     ["x-html"]() {
       return `${this.$store.questionnaire.currentItemIndex +1}
-        &middot;${this.$store.questionnaire.items.length}`;
+        &middot; ${this.$store.questionnaire.items.length}`;
     },
   },
 
