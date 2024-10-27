@@ -1,6 +1,5 @@
 export default () => ({
 
-  gdpr: false,
   requestedPath: null,
   whitelistUrls: [],
 
@@ -11,7 +10,7 @@ export default () => ({
   htmxEvents: {
     
     ["@htmx:before-request.camel"](event) {
-      if (!this.gdpr) {
+      if (!this.$store.app.gdpr) {
         if (event.detail.pathInfo.requestPath.indexOf("kts") > -1) {
           event.preventDefault();
           this.requestedPath = event.detail.pathInfo.requestPath;
