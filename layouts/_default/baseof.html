@@ -22,7 +22,7 @@
     >
         {{- partial "base/navbar" . }}
         {{- partial "base/breadcrumbs" . }}
-        <div class="flex-grow flex flex-col p-9">
+        <div class="flex-grow flex flex-col p-9 pt-0">
             {{- block "main" . }} {{- end }}
             {{- partialCached "base/footer" . }}
         </div>
