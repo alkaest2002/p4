@@ -1,11 +1,7 @@
 export default () => ({
 
-  lastVisitedUrl: null,
-
   initBase() {
-    console.log("initBase");
     this.$store.app.envIsDevelopment = this.$refs.base.dataset.env == "true";
-    this.requestedPath = this.$refs.base.dataset.urlBase;
   },
 
   htmxEvents: {
