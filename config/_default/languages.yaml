@@ -11,9 +11,12 @@ it:
       - name: conosci te stesso
         pageRef: /kts
         weight: 2
+      - name: fai match
+        pageRef: /kts/match
+        weight: 3
       - name: credits
         pageRef: /credits
-        weight: 3
+        weight: 4
 en:
   languageCode: en-US
   languageName: English
@@ -27,6 +30,9 @@ en:
       - name: know yourself
         pageRef: /kts
         weight: 2
+      - name: make a match
+        pageRef: /kts/match
+        weight: 3
       - name: credits
         pageRef: /credits
-        weight: 3
+        weight: 4
