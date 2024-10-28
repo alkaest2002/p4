@@ -2,10 +2,10 @@ import { initState, wipeState } from "../usables/useAlpineStore";
 import { compressString } from "../usables/useCompressDecompress";
 
 const stateFn = () => [
-  ["items", []],
-  ["answers", []],
-  ["currentItemIndex", 0],
-  ["dimensions", { 
+  [ "items", []],
+  [ "answers", []],
+  [ "currentItemIndex", 0],
+  [ "dimensions", { 
       "counts":    { "E": 0, "I": 0, "S": 0, "N":0, "F": 0, "T": 0, "P":0, "J": 0 },
       "latencies": { "E": 0, "I": 0, "S": 0, "N":0, "F": 0, "T": 0, "P":0, "J": 0 },
     }
@@ -82,7 +82,7 @@ export default (Alpine) => ({
     this.currentItemIndex = 0;
   },
 
-  setAnswer(answerValue, answerlatency) {
+  setAnswer(answerValue, answerlatency = 0) {
     const previousLatency = this.currentAnswer?.latency || 0;
     const latency = previousLatency + answerlatency;
     const dimension = this.currentItem.options[answerValue].dimension;
@@ -93,7 +93,7 @@ export default (Alpine) => ({
     Object.values(this.answers).forEach(el => {
       this.dimensions.counts[el.dimension] += 1;
       this.dimensions.latencies[el.dimension] += el.latency;
-    })
+    });
   },
 
   goToNextItem() {

@@ -1,9 +1,9 @@
 import { initState, wipeState } from "../usables/useAlpineStore";
 
 const stateFn = () => [
-  ["gdpr", false],
-  ["languageDropdownIsOpen", false],
-  ["envIsDevelopment", false],
+  [ "gdpr", false],
+  [ "languageDropdownIsOpen", false],
+  [ "envIsDevelopment", false],
 ];
 
 export default (Alpine) => ({

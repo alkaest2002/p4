@@ -1,8 +1,8 @@
 import { initState, wipeState } from "../usables/useAlpineStore";
 
 const stateFn = () => [
-  ["urls", {}],
-  ["lastVisitedUrl", null]
+  [ "urls", {} ],
+  [ "lastVisitedUrl", null ]
 ];
 
 export default (Alpine) => ({

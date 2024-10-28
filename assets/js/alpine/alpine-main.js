@@ -5,6 +5,7 @@ import persist from "@alpinejs/persist";
 import sApp from "./stores/app";
 import sNavigation from "./stores/navigation";
 import sQuestionnaire from "./stores/questionnaire";
+import sMatch from "./stores/match";
 
 // views
 import vBase from "./views/base";
@@ -13,6 +14,7 @@ import vHome from "./views/home";
 import vQuestionnaire from "./views/questionnaire";
 import vAnswers from "./views/answers";
 import vResults from "./views/results";
+import vMatch from "./views/match";
 
 // components
 import cDropdown from "./components/dropdown";
@@ -21,12 +23,14 @@ Alpine.plugin(persist);
 Alpine.store("app", sApp(Alpine));
 Alpine.store("navigation", sNavigation(Alpine));
 Alpine.store("questionnaire", sQuestionnaire(Alpine));
+Alpine.store("match", sMatch(Alpine));
 Alpine.data("base", vBase);
 Alpine.data("menu", vMenu);
 Alpine.data("home", vHome);
 Alpine.data("questionnaire", vQuestionnaire);
 Alpine.data("answers", vAnswers);
 Alpine.data("results", vResults);
+Alpine.data("match", vMatch);
 
 Alpine.data("dropdown", cDropdown);
 
