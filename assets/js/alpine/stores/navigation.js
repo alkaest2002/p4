@@ -2,6 +2,7 @@ import { initState, wipeState } from "../usables/useAlpineStore";
 
 const stateFn = () => [
   ["urls", {}],
+  ["lastVisitedUrl", null]
 ];
 
 export default (Alpine) => ({
@@ -23,6 +24,10 @@ export default (Alpine) => ({
 
   goToUrl(url) {
     url && window.htmx.ajax("GET", url);
+  },
+
+  goToLastVisited() {
+    this.lastVisitedUrl && this.goToUrl(this.lastVisitedUrl);
   },
 
   wipeState(omit = []) {
