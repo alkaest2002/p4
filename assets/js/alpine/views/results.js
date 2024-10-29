@@ -1,13 +1,13 @@
 export default () => ({
   initResults() {},
 
-  "type": {
+  "role": {
     ["x-text"]() {
-      return this.$store.questionnaire.type;
+      return this.$store.questionnaire.role;
     },
   },
 
-  "typeLink": {
+  "roleLink": {
     ["@click.prevent"]() {
       this.$store.navigation.goToPage(this.$store.questionnaire.type);
     },

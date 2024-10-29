@@ -24,11 +24,11 @@ readingTime:
   other: "tempo stimato di lettura: {{ . }} minuti"
 related: articoli simili
 rightsReserved: I contenuti del sito sono concessi con licenza
+roleInfo: leggi le informazioni riguardanti il tuo ruolo
+roleTitle: il tuo ruolo
+readRoleButton: vai al tuo ruolo
 sec: sec
 sortAnswersByItemId: ordina per quesito
 sortAnswersByLatency: ordina per latenza
 toc: sommario
-typeTitle: il tuo codice tipo
-typeInfo: leggi le informazioni riguardanti il tuo codice tipo
-typeReadButton: vai al tuo codice tipo
 validationError: dato non corretto

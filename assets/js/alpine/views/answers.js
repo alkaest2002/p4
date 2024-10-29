@@ -21,15 +21,19 @@ export default () => ({
   },
 
   items: {
+    
     ["x-for"]: "{ itemId, itemA, itemB, answer } in itemsWithAnswers",
+    
     [":key"]: "itemId"
   },
 
   item(itemText, optionValue, answer) {
     return {
+      
       "x-text"() {
         return itemText
       },
+      
       ":class"() {
         return answer.answerValue === optionValue
           ? "font-semibold"

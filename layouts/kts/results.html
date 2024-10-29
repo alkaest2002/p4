@@ -20,14 +20,14 @@
         {{ .Content }}
       </div>
       <div class="flex-grow md:basis-1 flex flex-col items-center justify-center p-5 border rounded-lg shadow-md">
-        <p class="mb-3 font-bold">{{ T "typeTitle" | strings.FirstUpper }}</p>
-        <span x-bind="type" class="text-3xl font-extrabold"></span>
-        <p class="max-w-96 my-3 text-sm font text-gray-500">{{ T "typeInfo" }}</p>
+        <p class="mb-3 font-bold">{{ T "roleTitle" | strings.FirstUpper }}</p>
+        <span x-bind="role" class="text-3xl font-extrabold"></span>
+        <p class="max-w-96 my-3 text-sm font text-gray-500">{{ T "roleInfo" }}</p>
         <a
-          x-bind="typeLink"
+          x-bind="roleLink"
           href="#"
           class="inline-flex items-center gap-x-2 rounded-lg bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white  hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-          {{ T "typeReadButton" }}
+          {{ T "readRoleButton" }}
         </a>
       </div>
       <div class="flex-grow md:basis-1 flex flex-col items-center justify-center p-5 border rounded-lg shadow-md">

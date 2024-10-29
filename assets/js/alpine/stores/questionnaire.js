@@ -5,6 +5,7 @@ const stateFn = () => [
   [ "items", []],
   [ "answers", []],
   [ "currentItemIndex", 0],
+  [ "roles", {}],
   [ "dimensions", { 
       "counts":    { "E": 0, "I": 0, "S": 0, "N":0, "F": 0, "T": 0, "P":0, "J": 0 },
       "latencies": { "E": 0, "I": 0, "S": 0, "N":0, "F": 0, "T": 0, "P":0, "J": 0 },
@@ -73,6 +74,10 @@ export default (Alpine) => ({
     return "EINSFTJP".split("").filter(el => type.indexOf(el) > -1).join("");
   },
 
+  get role() {
+    return this.roles[this.type];
+  },
+
   resetItemIndex() {
     this.currentItemIndex = 0;
   },
@@ -80,6 +85,10 @@ export default (Alpine) => ({
   setItems(items) {
     this.items = items;
     this.currentItemIndex = 0;
+  },
+
+  setRoles(roles) {
+    this.roles = roles;
   },
 
   setAnswer(answerValue, answerlatency = 0) {

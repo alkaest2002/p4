@@ -20,10 +20,10 @@ readingTime:
   other: "estimated reading time: {{ . }} minutes"
 related: similar articles
 rightsReserved: The contents of the site are licensed under
+roleInfo: read information about your role
+roleTitle: your role
 sec: sec
 sortAnswersByItemId: sort by question
 sortAnswersByLatency: sort by latency
 toc: table of contents
-typeTitle: your type code
-typeInfo: read information about your type code
-typeReadButton: go to your type code
+readRoleButton: go to your type code
