@@ -4,7 +4,6 @@ import { decompressString } from "../usables/useCompressDecompress";
 const stateFn = () => [
   [
     "self", {
-      "compressedAnswers": "",
       "answers": [],
       "dimensions": { 
         "counts":    { "E": 0, "I": 0, "S": 0, "N":0, "F": 0, "T": 0, "P":0, "J": 0 },
@@ -13,7 +12,6 @@ const stateFn = () => [
   ],
   [
     "other", {
-      "compressedAnswers": "",
       "answers": [],
       "dimensions": { 
         "counts":    { "E": 0, "I": 0, "S": 0, "N":0, "F": 0, "T": 0, "P":0, "J": 0 },
@@ -30,28 +28,25 @@ export default (Alpine) => ({
     return /^[A-Za-z0-9+/]+$/.test(compressedString);
   },
 
-  setAnswers(decompressedAnswers, person) {
-    const answers = decompressedAnswers.map((el, index) => {
-      return { 
-        answerValue: el,
-        dimension: this.$store.questionnaire.items[index].options[el].dimension,
-        latency: null
-      } 
-    });
-    const dimensions = Object.values(answers).forEach(el => {
-      person.dimensions.counts[el.dimension] += 1;
-    });
-    person = { ...person, answers, dimensions }
+  setAnswers(person) {
+    person.answers = decompressString(person.compressedAnswers, 13)
+      .split("")
+      .map((el, index) => {
+        return { 
+          answerValue: el,
+          dimension: Alpine.store("questionnaire").items[index].options[el].dimension,
+          latency: null
+        } 
+      });
+      person.answers.forEach(el => person.dimensions.counts[el.dimension] += 1);
   },
 
-  setAnswersSelf(compressedAnswers) {
-    const decompressedAnswers = decompressString(compressedAnswers);
-    this.setAnswers(decompressedAnswers, this.self);
-  },
-
-  setAnswersOther(compressedAnswers) {
-    const decompressedAnswers = decompressString(compressedAnswers);
-    this.setAnswers(decompressedAnswers, this.other);
+  setAnswersSelfAndOther(compressedAnswersSelf, compressedAnswersOther) {
+    this.wipeState();
+    this.self.compressedAnswers = compressedAnswersSelf;
+    this.other.compressedAnswers = compressedAnswersOther;
+    this.setAnswers(this.self);
+    this.setAnswers(this.other);
   },
 
   getItemsWithAnswers(answers) {
