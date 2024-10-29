@@ -1,5 +1,7 @@
 {{- define "main" }}
-<div class="flex-grow w-full">
+<div
+    x-data="roles"
+    class="flex-grow w-full">
     <div class="mb-6">
         <h1 class="text-xl font-bold">{{ .Title }}</h1>
         <span class="text-sm text-gray-500">
@@ -7,5 +9,13 @@
         </span>
     </div>
     <div id="content">{{ .Content }}</div>
+    <div class="flex flex-wrap gap-3 mt-3">
+        <div>
+            <span x-bind="roleSelf"></span>
+        </div>
+        <div>
+            <span x-bind="roleOther"></span>
+        </div>
+    </div>
 </div>
 {{- end }}

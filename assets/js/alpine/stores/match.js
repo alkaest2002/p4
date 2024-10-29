@@ -24,6 +24,14 @@ export default (Alpine) => ({
   
   ...initState(stateFn, Alpine),
 
+  get roleSelf() {
+    return this.getRole(this.self);
+  },
+
+  get roleOther() {
+    return this.getRole(this.other);
+  },
+
   checkValidityofCompressedString(compressedString) {
     return /^[A-Za-z0-9+/]+$/.test(compressedString);
   },

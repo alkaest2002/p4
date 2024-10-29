@@ -54,7 +54,6 @@ export default () => ({
     }
   },
 
-
   compressedAnswersButton: {
 
     ["x-ref"]: "compressedAnswersButton",
