@@ -15,7 +15,7 @@ export default () => ({
 
   "answersLink": {
     ["@click.prevent"]() {
-      this.$store.navigation.goToPage("answers");
+      this.$store.navigation.goToPage("kts/answers");
     },
   },
 

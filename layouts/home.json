@@ -9,7 +9,10 @@
   {{- end }}
 {{- end }}
 {{- range (.Site.GetPage "kts").Pages }}
-  {{- $urls = $urls | merge (dict .Layout .RelPermalink) }}
+  {{- $urls = $urls | merge (dict (printf "kts/%s" .Layout) .RelPermalink) }}
+{{- end }}
+{{- range (.Site.GetPage "match").Pages }}
+  {{- $urls = $urls | merge (dict (printf "match/%s" .Layout) .RelPermalink) }}
 {{- end }}
 {{- with .Site.GetPage "consent" }}
   {{- $urls = $urls | merge (dict "consent" .RelPermalink) }}

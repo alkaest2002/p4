@@ -165,7 +165,7 @@ export default () => ({
     ["@click.prevent"]() {
       this.clickedButton = "next";
       if (this.$store.questionnaire.isComplete && this.$store.questionnaire.isLastItem) {
-        this.canNavigateAway && this.$store.navigation.goToPage("results");
+        this.canNavigateAway && this.$store.navigation.goToPage("kts/results");
       } else {
         setTimeout(() => {
           this.canNavigateAway && this.$store.questionnaire.goToNextItem();

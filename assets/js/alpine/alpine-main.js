@@ -15,6 +15,7 @@ import vQuestionnaire from "./views/questionnaire";
 import vAnswers from "./views/answers";
 import vResults from "./views/results";
 import vMatch from "./views/match";
+import vRoles from "./views/roles";
 
 // components
 import cDropdown from "./components/dropdown";
@@ -31,6 +32,7 @@ Alpine.data("questionnaire", vQuestionnaire);
 Alpine.data("answers", vAnswers);
 Alpine.data("results", vResults);
 Alpine.data("match", vMatch);
+Alpine.data("roles", vRoles);
 
 Alpine.data("dropdown", cDropdown);
 

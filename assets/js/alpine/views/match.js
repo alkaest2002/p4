@@ -67,6 +67,7 @@ export default () => ({
       this.passValidationSelf
         && this.passValidationOther
         && this.$store.match.setAnswersSelfAndOther(this.compressedAnswersSelf, this.compressedAnswersOther);
+      this.$store.navigation.goToPage("match/roles");
     }
   }
 });
