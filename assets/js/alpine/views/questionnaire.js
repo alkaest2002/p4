@@ -168,7 +168,7 @@ export default () => ({
         this.canNavigateAway && this.$store.navigation.goToPage("kts/results");
       } else {
         setTimeout(() => {
-          this.canNavigateAway && this.$store.questionnaire.goToNextItem();
+          this.canNavigateAway && this.$store.questionnaire.increaseItemIndex();
           this.clickedButton = null;
         }, 150);
       }
@@ -187,7 +187,7 @@ export default () => ({
     ["@click.prevent"]() {
       this.clickedButton = "prev";
       setTimeout(() => {
-        this.$store.questionnaire.goToPreviousItem();
+        this.$store.questionnaire.decreaseItemIndex();
         this.clickedButton = null; 
       }, 150);
     },

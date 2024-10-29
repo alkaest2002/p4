@@ -59,10 +59,8 @@ export default () => ({
     ["x-ref"]: "compressedAnswersButton",
 
     ["@click.prevent"]() {     
-      this.passValidationSelf = this.$store.match
-        .checkValidityofCompressedString(this.compressedAnswersSelf); 
-      this.passValidationOther = this.$store.match
-        .checkValidityofCompressedString(this.compressedAnswersOther);       
+      this.passValidationSelf  = this.$store.match.checkValidityofCompressedString(this.compressedAnswersSelf); 
+      this.passValidationOther = this.$store.match.checkValidityofCompressedString(this.compressedAnswersOther);       
       this.passValidationSelf
         && this.passValidationOther
         && this.$store.match.setAnswersSelfAndOther(this.compressedAnswersSelf, this.compressedAnswersOther);

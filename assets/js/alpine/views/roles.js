@@ -5,16 +5,16 @@ export default () => ({
   roleSelf: {
     ["x-ref"]: "roleSelf",
 
-    ["x-html"]() {
-      return this.$store.match.roleSelf
+    ["x-text"]() {
+      return this.$store.keirsey.roleSelf
     }
   },
 
   roleOther: {
     ["x-ref"]: "roleOther",
 
-    ["x-html"]() {
-      return this.$store.match.roleOther
+    ["x-text"]() {
+      return this.$store.keirsey.roleOther
     }
   }
 });

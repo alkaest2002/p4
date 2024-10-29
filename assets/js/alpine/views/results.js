@@ -3,13 +3,13 @@ export default () => ({
 
   "role": {
     ["x-text"]() {
-      return this.$store.questionnaire.role;
+      return this.$store.keirsey.getRole("self");
     },
   },
 
   "roleLink": {
     ["@click.prevent"]() {
-      this.$store.navigation.goToPage(this.$store.questionnaire.type);
+      this.$store.navigation.goToPage(this.$store.keirsey.getType("self"));
     },
   },
 

@@ -8,7 +8,7 @@ export default () => ({
       const { urls, roles } = await fetch("index.json").then(res => res.json());
       this.$store.questionnaire.setItems(items);
       this.$store.navigation.setUrls(urls);
-      this.$store.questionnaire.setRoles(roles);
+      this.$store.keirsey.setRoles(roles);
     } catch(err) {
       console.log(err);
     }
