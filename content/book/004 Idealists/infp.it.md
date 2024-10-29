@@ -1,5 +1,6 @@
 ---
 title: INFP
+label: healer
 aliases:
   - /types/INFP
 ---

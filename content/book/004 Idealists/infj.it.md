@@ -1,5 +1,6 @@
 ---
 title: INFJ
+label: counselor
 aliases:
   - /types/INFJ
 ---

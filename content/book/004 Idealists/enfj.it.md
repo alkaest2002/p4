@@ -1,5 +1,6 @@
 ---
 title: ENFJ
+label: teacher
 aliases:
   - /types/ENFJ
 ---

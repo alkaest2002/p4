@@ -18,4 +18,4 @@
 {{- with .Site.Home }}
   {{- $urls = $urls | merge (dict "base" .RelPermalink) }}
 {{- end }}
-{{- $urls | jsonify }}
+{{- (dict "urls" $urls) | jsonify }}

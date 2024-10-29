@@ -1,5 +1,6 @@
 ---
 title: ISFJ
+label: protector
 aliases:
   - /types/ISFJ
 ---

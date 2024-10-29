@@ -1,5 +1,6 @@
 ---
 title: ESFJ
+label: provider
 aliases:
   - /types/ESFJ
 ---

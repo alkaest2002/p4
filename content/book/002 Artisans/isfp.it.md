@@ -1,5 +1,6 @@
 ---
 title: ISFP
+label: composer
 aliases:
   - /types/ISFP
 ---

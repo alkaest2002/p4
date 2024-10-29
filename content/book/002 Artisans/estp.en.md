@@ -1,5 +1,6 @@
 ---
 title: ESTP
+label: promoter
 aliases:
   - /types/ESTP
 ---
