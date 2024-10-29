@@ -1,5 +1,5 @@
 ---
 title: Input answers data
-layout: input
+layout: answers
 ---
 Match description
