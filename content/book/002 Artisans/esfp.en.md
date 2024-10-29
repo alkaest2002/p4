@@ -1,6 +1,6 @@
 ---
 title: ESFP
-label: performer
+role: performer
 aliases:
   - /types/ESFP
 ---

@@ -1,6 +1,6 @@
 ---
 title: ENTJ
-label: fieldmarshal
+role: fieldmarshal
 aliases:
   - /types/ENTJ
 ---

@@ -1,6 +1,6 @@
 ---
 title: ENTP
-label: inventor
+role: inventor
 aliases:
   - /types/ENTP
 ---

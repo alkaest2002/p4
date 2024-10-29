@@ -1,6 +1,6 @@
 ---
 title: ESTJ
-label: supervisor
+role: supervisor
 aliases:
   - /types/ESTJ
 ---

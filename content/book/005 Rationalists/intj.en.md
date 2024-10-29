@@ -1,6 +1,6 @@
 ---
 title: INTJ
-label: mastermind
+role: mastermind
 aliases:
   - /types/INTJ
 ---

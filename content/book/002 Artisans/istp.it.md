@@ -1,6 +1,6 @@
 ---
 title: ISTP
-label: crafter
+role: crafter
 aliases:
   - /types/ISTP
 ---

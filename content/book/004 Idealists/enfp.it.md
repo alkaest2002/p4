@@ -1,6 +1,6 @@
 ---
 title: ENFP
-label: champion
+role: champion
 aliases:
   - /types/ENFP
 ---

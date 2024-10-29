@@ -1,6 +1,6 @@
 ---
 title: INTP
-label: architect
+role: architect
 aliases:
   - /types/INTP
 ---
