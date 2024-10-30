@@ -1,10 +1,10 @@
-export const initState = (stateFn, Alpine) => {
+export const initState = (stateFn, Alpine, prefix) => {
   return stateFn().reduce(
     (acc, [key, defaultValue]) => ({
       ...acc,
       ...{ [key]: Alpine.$persist(defaultValue)
           .using(localStorage)
-          .as(`tmp-4_${key}`)
+          .as(`tmp-4_${prefix}_${key}`)
         },
     }),
     {}

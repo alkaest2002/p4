@@ -3,42 +3,39 @@ import { compressString, decompressString } from "../usables/useCompressDecompre
 
 const stateFn = () => [
   [
-    "me", {
+    "me", 
+    {
       "compressedAnswers": "",
       "answers": [],
-    }
+    },
   ],
   [
-    "you", {
+    "you", 
+    {
       "compressedAnswers": "",
       "answers": [],
-    }
+    },
   ]
 ];
 
 export default (Alpine) => ({
   
-  ...initState(stateFn, Alpine),
+  ...initState(stateFn, Alpine, "_answers"),
 
-  get currentAnswer() {
+  getCurrentAnswer(person = "me") {
     const currentAnswerIndex = Alpine.store("questionnaire").currentItemIndex;
-    console.log(this)
-    return this["me"].answers[currentAnswerIndex];
+    return this[person].answers[currentAnswerIndex];
   },
 
-  get currentAnswerValue() {
-    return this.currentAnswer?.answerValue;
+  getCurrentAnswerValue(person = "me") {
+    return this.getCurrentAnswer(person)?.answerValue;
   },
 
-  get compressedAnswers() {
-    const answers = this["me"].answers.map(({ answerValue }) => answerValue).join("");
+  getCompressedAnswers(person = "me") {
+    const answers = this[person].answers.map(({ answerValue }) => answerValue).join("");
     return answers.length > 0
       ? compressString(answers)
       : undefined
-  },
-
-  checkValidityofCompressedString(compressedString) {
-    return /^[A-Za-z0-9+/]+$/.test(compressedString);
   },
 
   getItemsWithAnswers(answers) {
@@ -57,6 +54,10 @@ export default (Alpine) => ({
 
   getItemsWithAnswersYou() {
     return this.getItemsWithAnswers(this["you"].answers);
+  },
+
+  checkValidityofCompressedString(compressedString) {
+    return /^[A-Za-z0-9+/]+$/.test(compressedString);
   },
 
   setAnswer(answerValue, answerlatency = 0) {
@@ -80,7 +81,7 @@ export default (Alpine) => ({
           latency: null
         } 
       });
-    Alpine.store("keirsey").computeDimensions(person, this[person].answers);
+    Alpine.store("keirsey").computeDimensions(`keirsey${person}`, this[person].answers);
   },
 
   setAnswersMeAndYou(compressedAnswers, compressedAnswersYou) {

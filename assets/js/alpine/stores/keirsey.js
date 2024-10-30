@@ -9,13 +9,13 @@ const getBlanckDimensions = () => ({
 
 const stateFn = () => [
   [ "roles", []],
-  [ "me", {} ],
-  [ "you", {} ]
+  [ "me", {}, "" ],
+  [ "you", {}, "" ]
 ];
 
 export default (Alpine) => ({
   
-  ...initState(stateFn, Alpine),
+  ...initState(stateFn, Alpine, "_keirsey"),
 
   get roleMe() {
     return this.getRole("me");

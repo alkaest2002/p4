@@ -35,11 +35,11 @@ export default () => ({
   },  
 
   get canNavigateAway() {
-    return this.$store.answers.currentAnswerValue;
+    return this.$store.answers.getCurrentAnswerValue("me");
   },
 
   toggleOption() {
-    const currentAnswerValue = this.$store.answers.currentAnswerValue;
+    const currentAnswerValue = this.$store.answers.getCurrentAnswerValue("me");
     if (currentAnswerValue === "a") return this.$refs.optionB.click();
     if (currentAnswerValue === "b") return this.$refs.optionA.click();
     this.$refs.optionA.click();
@@ -129,7 +129,7 @@ export default () => ({
     },
 
     [":class"]() {
-      return this.$store.answers["me"].currentAnswerValue === "a"
+      return this.$store.answers.getCurrentAnswerValue("me") === "a"
         ? this.optionHighlightClass
         : this.optionBaseClass
     },
@@ -148,7 +148,7 @@ export default () => ({
     },
 
     [":class"]() {
-      return this.$store.answers["me"].currentAnswerValue === "b"
+      return this.$store.answers.getCurrentAnswerValue("me") === "b"
         ? this.optionHighlightClass
         : this.optionBaseClass
     },

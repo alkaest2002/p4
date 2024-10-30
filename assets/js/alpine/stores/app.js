@@ -8,7 +8,7 @@ const stateFn = () => [
 
 export default (Alpine) => ({
   
-  ...initState(stateFn, Alpine),
+  ...initState(stateFn, Alpine, "_app"),
 
   toggleLanguageDropdown() {
     this.languageDropdownIsOpen = !this.languageDropdownIsOpen;

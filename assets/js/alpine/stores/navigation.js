@@ -7,7 +7,7 @@ const stateFn = () => [
 
 export default (Alpine) => ({
   
-  ...initState(stateFn, Alpine),
+  ...initState(stateFn, Alpine, "_navigation"),
 
   setUrls(urls) {
     this.urls = urls;

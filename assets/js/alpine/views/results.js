@@ -19,9 +19,9 @@ export default () => ({
     },
   },
 
-  "compressedAnswers": {
+  "compressedAnswersMe": {
     ["x-text"]() {
-      return this.$store.questionnaire.compressedAnswers;
+      return this.$store.answers.getCompressedAnswers("me");
     }
   }
 });

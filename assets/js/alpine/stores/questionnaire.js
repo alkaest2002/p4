@@ -7,7 +7,7 @@ const stateFn = () => [
 
 export default (Alpine) => ({
   
-  ...initState(stateFn, Alpine),
+  ...initState(stateFn, Alpine, "_questionnaire"),
 
   get isComplete() {
     const answers =  Alpine.store("answers")["me"].answers;
