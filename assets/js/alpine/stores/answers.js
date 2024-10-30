@@ -81,7 +81,7 @@ export default (Alpine) => ({
           latency: null
         } 
       });
-    Alpine.store("keirsey").computeDimensions(`keirsey${person}`, this[person].answers);
+    Alpine.store("keirsey").computeDimensions(person, this[person].answers);
   },
 
   setAnswersMeAndYou(compressedAnswers, compressedAnswersYou) {

@@ -1,7 +1,7 @@
 export default () => ({
 
-  compressedAnswersMe: "",
-  compressedAnswersYou: "",
+  compressedAnswersMe: "aaa",
+  compressedAnswersYou: "bbb",
   passValidationMe: true,
   passValidationYou: true,
 
@@ -20,9 +20,9 @@ export default () => ({
     }
   },
 
-  validationError: {
+  validationErrorMe: {
     
-    ["x-ref"]: "validationError",
+    ["x-ref"]: "validationErrorMe",
 
     [":class"]() {
       return this.passValidationMe
@@ -59,12 +59,11 @@ export default () => ({
     ["x-ref"]: "compressedAnswersButton",
 
     ["@click.prevent"]() {     
-      this.passValidationMe  = this.$store.match.checkValidityofCompressedString(this.compressedAnswersMe); 
-      this.passValidationYou = this.$store.match.checkValidityofCompressedString(this.compressedAnswersYou);       
-      this.passValidationMe
-        && this.passValidationYou
-        && this.$store.match.setAnswersAndYou(this.compressedAnswersMe, this.compressedAnswersYou);
-      this.$store.navigation.goToPage("match/roles");
+      this.passValidationMe  = this.$store.answers.checkValidityofCompressedString(this.compressedAnswersMe); 
+      this.passValidationYou = this.$store.answers.checkValidityofCompressedString(this.compressedAnswersYou);       
+      this.passValidationMe && this.passValidationYou
+        && this.$store.answers.setAnswersMeAndYou(this.compressedAnswersMe, this.compressedAnswersYou);
+      this.passValidationMe && this.passValidationYou && this.$store.navigation.goToPage("match/roles");
     }
   }
 });
