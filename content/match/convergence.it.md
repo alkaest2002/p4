@@ -1,6 +1,6 @@
 ---
-title: Confontra i ruoli
+title: Convergenza
 layout: convergence
 slug: convergenza
 ---
-Il valore di convergenza indica in che misura avete dato risposte uguali.
+La percentuale di convergenza indica in che misura tu e il tuo match avete dato risposte uguali.

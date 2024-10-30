@@ -2,7 +2,7 @@
 {{- $urlBase := .Site.Home.RelPermalink }}
 {{- $fetchingMessage := T "fetchingMessage" }}
 {{- $fetchErrorMessage := T "fetchErrorMessage" }}
-<div class="flex-grow w-full">
+<div class="flex-grow flex flex-col">
   <div
     x-cloak
     x-ref="ktsQuestionnaire"
@@ -11,6 +11,7 @@
     data-url-base="{{ $urlBase }}"
     data-fetching-message="{{ $fetchingMessage }}"
     data-fetch-error-message="{{ $fetchErrorMessage }}"
+    class="flex-grow flex flex-col"
   >
     <div
       x-bind="notifyFetching"
@@ -25,17 +26,17 @@
     <div
       x-cloak
       x-bind="item"
+      class="flex-grow"
     >
-      <h1 class="text-xl font-extrabold mb-3">
-        <span x-bind="itemNumber"></span>.
+      <p class="font-semibold">{{ T "choose" | strings.FirstUpper }}</p>
+      <p class="mb-9 text-sm">{{ T "chooseTip" | strings.FirstUpper | safeHTML }}</p>
+      <h1 class="min-h-24 text-xl font-extrabold">
         <span x-bind="itemText"></span>...
       </h1>
-      <p>{{ T "choose" | strings.FirstUpper }}</p>
-      <p class="mt-1 mb-6 text-sm">{{ T "chooseTip" | strings.FirstUpper | safeHTML }}</p>
       <div class="mb-6 flex flex-col gap-4">
-        <div x-bind="optionA" class="px-4 py-6 font-semibold rounded-lg border shadow-md cursor-pointer">
+        <div x-bind="optionA" class="min-h-24 px-4 py-3 font-semibold rounded-lg border shadow-md cursor-pointer">
         </div>
-        <div x-bind="optionB" class="px-4 py-6 font-semibold rounded-lg border shadow-md cursor-pointer">
+        <div x-bind="optionB" class="min-h-24 px-4 py-3 font-semibold rounded-lg border shadow-md cursor-pointer">
         </div>
       </div>
       <nav class="flex items-center justify-between py-3 border-t border-gray-300 bg-white">

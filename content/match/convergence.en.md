@@ -1,5 +1,5 @@
 ---
-title: Match the roles
+title: Convergence
 layout: convergence
 ---
-The convergence value indicates the extent to which you have given identical responses.
+The convergence percentage indicates the extent to which you and your match have given identical responses.

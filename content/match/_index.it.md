@@ -1,14 +1,4 @@
 ---
 title: Match
-
-build:
-  list: never
-  publishResources: false
-  render: never
-
-cascade:
-  build:
-    list: local
-    publishResources: false
-    render: always
 ---
+Inserisci il tuo codice di risposta e quello della persona con cui ti vuoi confontare. Se tu o l'atra persona siete sprovvisti del  codice, compilate nuovamente il {{< base/link type="link" text="questionario" link="/kts" >}}.

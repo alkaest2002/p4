@@ -1,5 +1,5 @@
 {{- define "main" }}
-<div class="flex-grow w-full">
+<div class="flex-grow">
     <div class="mb-9">{{ .Content }}</div>
     {{ range .Data.Terms }}
         {{- partialCached "base/item-with-count"
