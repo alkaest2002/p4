@@ -1,11 +1,13 @@
 {{- $urls := dict }}
 {{- $roles := dict }}
-{{- $types := slice "002 Artisans" "003 Guardians" "004 Idealists" "005 Rationalists" }}
-{{- range $types }}
+{{- $groups := dict }}
+{{- $bookSection := slice "002 Artisans" "003 Guardians" "004 Idealists" "005 Rationalists" }}
+{{- range $bookSection }}
   {{- $section := $.Site.GetPage . }}
   {{- range $section.Pages }}
     {{- $urls = $urls | merge (dict .Title .RelPermalink) }}
     {{- $roles = $roles | merge (dict .Title .Params.role) }}
+    {{- $groups = $groups | merge (dict .Title .Params.group) }}
   {{- end }}
 {{- end }}
 {{- range (.Site.GetPage "kts").Pages }}
@@ -23,4 +25,4 @@
 {{- with .Site.Home }}
   {{- $urls = $urls | merge (dict "base" .RelPermalink) }}
 {{- end }}
-{{- (dict "urls" $urls "roles" $roles) | jsonify }}
+{{- (dict "urls" $urls "roles" $roles "groups" $groups) | jsonify }}

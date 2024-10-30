@@ -2,7 +2,7 @@
 title: INFJ
 linkTitle: Counselor
 role: counselor
-type: idealist
+group: idealist
 aliases:
   - /types/INFJ
 ---

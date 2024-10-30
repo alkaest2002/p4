@@ -1,7 +1,7 @@
 ---
 title: ISTP
 linkTitle: Crafter
-type: guardian
+group: guardian
 role: artisan
 aliases:
   - /types/ISTP

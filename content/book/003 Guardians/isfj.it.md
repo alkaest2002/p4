@@ -2,7 +2,7 @@
 title: ISFJ
 linkTitle: Protector
 role: protector
-type: guardian
+group: guardian
 aliases:
   - /types/ISFJ
 ---

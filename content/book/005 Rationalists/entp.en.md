@@ -2,7 +2,7 @@
 title: ENTP
 linkTitle: Inventor
 role: inventor
-type: rationalist
+group: rationalist
 aliases:
   - /types/ENTP
 ---

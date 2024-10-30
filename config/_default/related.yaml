@@ -5,21 +5,21 @@ indices:
   name: categories
   pattern: ""
   toLower: false
-  type: basic
+  group: basic
   weight: 100
 - applyFilter: false
   cardinalityThreshold: 0
   name: date
   pattern: ""
   toLower: false
-  type: basic
+  group: basic
   weight: 10
 - applyFilter: false
   cardinalityThreshold: 0
   name: tags
   pattern: ""
   toLower: false
-  type: basic
+  group: basic
   weight: 80
 threshold: 80
 toLower: false

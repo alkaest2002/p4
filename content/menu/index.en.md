@@ -1,5 +1,5 @@
 ---
 title: Menu
-type: navigation
+group: navigation
 layout: menu
 ---

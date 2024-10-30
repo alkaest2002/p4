@@ -2,7 +2,7 @@
 title: ISFP
 linkTitle: Composer
 role: composer
-type: guardian
+group: guardian
 aliases:
   - /types/ISFP
 ---

@@ -2,7 +2,7 @@
 title: ISFP
 linkTitle: Composer
 role: composer
-type: artisan
+group: artisan
 aliases:
   - /types/ISFP
 ---

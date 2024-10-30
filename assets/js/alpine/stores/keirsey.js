@@ -8,6 +8,7 @@ const getBlanckDimensions = () => ({
 });
 
 const stateFn = () => [
+  [ "groups", []],
   [ "roles", []],
   [ "me", {}, "" ],
   [ "you", {}, "" ]
@@ -16,6 +17,19 @@ const stateFn = () => [
 export default (Alpine) => ({
   
   ...initState(stateFn, Alpine, "_keirsey"),
+
+  get groupMe() {
+    return this.getGroup("me");
+  },
+
+  get groupYou() {
+    return this.getGroup("you");
+  },
+
+  getGroup(person = "me") {
+    const type = this.getType(person);
+    return this.groups[type]
+  },
 
   get roleMe() {
     return this.getRole("me");
@@ -27,7 +41,7 @@ export default (Alpine) => ({
 
   getRole(person = "me") {
     const type = this.getType(person);
-    return this.roles[type];
+    return this.roles[type]
   },
 
   getTypeWithCoherenceValue(person = "me") {
@@ -40,6 +54,10 @@ export default (Alpine) => ({
   getType(person = "me") {
     const type = this.getTypeWithCoherenceValue(person).map(el => el[0]).join("");
     return "EINSFTJP".split("").filter(el => type.indexOf(el) > -1).join("");
+  },
+
+  setGroups(groups) {
+    this.groups = groups;
   },
 
   setRoles(roles) {

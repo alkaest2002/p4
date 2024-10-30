@@ -1,6 +1,6 @@
 ---
 title: Privacy
-type: privacy
+group: privacy
 url: privacy
 ---
 This site stores some data in the [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).

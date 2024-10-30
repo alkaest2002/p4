@@ -2,7 +2,7 @@
 title: INTP
 linkTitle: Architect
 role: architect
-type: rationalist
+group: rationalist
 aliases:
   - /types/INTP
 ---

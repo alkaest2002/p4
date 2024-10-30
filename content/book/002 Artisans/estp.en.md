@@ -2,7 +2,7 @@
 title: ESTP
 linkTitle: Promoter
 role: promoter
-type: artisan
+group: artisan
 aliases:
   - /types/ESTP
 ---

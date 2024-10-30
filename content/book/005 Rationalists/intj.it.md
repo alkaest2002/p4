@@ -2,7 +2,7 @@
 title: INTJ
 linkTitle: Mastermind
 role: mastermind
-type: rationalist
+group: rationalist
 aliases:
   - /types/INTJ
 ---

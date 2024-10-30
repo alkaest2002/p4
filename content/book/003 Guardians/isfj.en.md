@@ -2,7 +2,7 @@
 title: ISFJ
 linkTitle: Protecotor
 role: Protecotor
-type: guardian
+group: guardian
 aliases:
   - /types/ISFJ
 ---

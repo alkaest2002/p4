@@ -2,7 +2,7 @@
 title: ENFP
 linkTitle: Champion
 role: champion
-type: idealist
+group: idealist
 aliases:
   - /types/ENFP
 ---

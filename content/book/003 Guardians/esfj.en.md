@@ -2,7 +2,7 @@
 title: ESFJ
 linkTitle: Provider
 role: provider
-type: guardian
+group: guardian
 aliases:
   - /types/ESFJ
 ---

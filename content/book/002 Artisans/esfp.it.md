@@ -2,7 +2,7 @@
 title: ESFP
 linkTitle: Performer
 role: performer
-type: artisan
+group: artisan
 aliases:
   - /types/ESFP
 ---

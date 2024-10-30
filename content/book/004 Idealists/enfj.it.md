@@ -2,7 +2,7 @@
 title: ENFJ
 linkTitle: Teacher
 role: teacher
-type: idealist
+group: idealist
 aliases:
   - /types/ENFJ
 ---

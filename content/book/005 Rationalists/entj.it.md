@@ -2,7 +2,7 @@
 title: ENTJ
 linkTitle: Fieldmarshal
 role: fieldmarshal
-type: rationalist
+group: rationalist
 aliases:
   - /types/ENTJ
 ---

@@ -2,7 +2,7 @@
 title: INFP
 linkTitle: Healer
 role: healer
-type: idealist
+group: idealist
 aliases:
   - /types/INFP
 ---
