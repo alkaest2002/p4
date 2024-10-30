@@ -1,29 +1,35 @@
 answers: answers
 answersIndex: no.
 chapter: chapter {{ . }}
-choose: choose between one of the two proposed options
+choose: choose one of the two provided options
 chooseTip: use the &uarr; &darr; arrows to select answer options and the &larr; &rarr; arrows to navigate between questions
-compressedAnswersTitle: your answers code
-compressedAnswersInfo: keep this code. You will need it to compare your answers with another person's answers
-consentButton: accept & continue
-fetchingMessage: "&rarr; Questionnaire items are loading. Please wait..."
-fetchErrorMessage: "&rarr; An error occurred while loading the data. Please reload the page."
+compressedAnswersTitle: your answer code
+compressedAnswersInfo: keep this code; you'll need it to compare your answers with someone else's
+consentButton: accept & proceed
+fetchingMessage: "&rarr; Data is loading. Please wait..."
+fetchErrorMessage: "&rarr; An error occurred while loading data. Please reload the page."
+groupTitle: your group
 item: question
 latency: latency
+loadCompressedAnswers: submit codes
+matchInputYou: The other person's answer code
+matchInput: Your answer code
 next: next
 noResults: "&rarr; Warning! Complete the test before accessing this page."
 previous: prev
+questionnaire: go to the questionnaire
 read: read
 readingTime:
   one: "estimated reading time: {{ . }} minute"
   other: "estimated reading time: {{ . }} minutes"
-readAnswersLink: go to your answers
-readRoleLink: go to your type code
+readAnswersLink: go to answers
+readRoleLink: go to your role
 related: similar articles
-rightsReserved: The contents of the site are licensed under
+rightsReserved: Site content is licensed
 roleInfo: read information about your role
 roleTitle: your role
 sec: sec
 sortAnswersByItemId: sort by question
 sortAnswersByLatency: sort by latency
 toc: table of contents
+validationError: invalid data

@@ -4,10 +4,11 @@ chapter: capitolo {{ . }}
 choose: scegli tra una delle due opzioni proposte
 chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e le frecce &larr; &rarr; per navigare tra i quesiti
 compressedAnswersTitle: il tuo codice delle risposte
-compressedAnswersInfo: conserva il codice; ti servirà per confrontare le tue risposte con quelle di un'altra persona
+compressedAnswersInfo: conserva questo codice per confrontare le tue risposte con un'altra persona
 consentButton: accetta & prosegui
 fetchingMessage: "&rarr; I dati si stanno caricando. Per favore attendi..."
 fetchErrorMessage: "&rarr; Si è verificato un errore nel caricamento dei dati. Per favore, ricarica la pagina."
+groupTitle: il tuo gruppo
 item: quesito
 latency: latenza
 loadCompressedAnswers: invia codici

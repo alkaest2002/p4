@@ -1,8 +1,5 @@
 {{- define "main" }}
 <div class="flex-grow">
-  <div class="mb-6">
-    <h1 class="font-bold text-xl text-center">{{ .Title }}</h1>
-  </div>
   <div
     x-ref="ktsResults"
     x-data="ktsResults"
@@ -14,10 +11,10 @@
       x-show="$store.questionnaire.isComplete"
       class="flex flex-wrap gap-6 space-between"
     >
-      <div class="flex-grow sm:w-full md:basis-1 flex flex-col items-center justify-center p-5 border rounded-lg shadow-md">
-        <p class="mb-1 font-bold">{{ T "compressedAnswersTitle" | strings.FirstUpper }}</p>
+      <div class="flex-grow sm:w-full md:basis-1 flex flex-col gap-3 items-center justify-center p-9 bg-orange-50 border rounded-lg shadow-md">
+        <p>{{ T "compressedAnswersTitle" | strings.FirstUpper }}</p>
         <p x-bind="compressedAnswersMe" class="text-3xl font-extrabold"></p>
-        <p class="max-w-96 mt-3 mb-6 text-center text-sm text-gray-500">{{ T "compressedAnswersInfo" }}</p>
+        <p class="max-w-96 text-center text-sm">{{ T "compressedAnswersInfo" }}</p>
         <a
           x-bind="answersMeLink"
           href="#"
@@ -25,16 +22,22 @@
           <span>{{ T "readAnswersLink" }}</span>
         </a>
       </div>
-      <div class="flex-grow sm:w-full md:basis-1 flex flex-col items-center justify-center p-5 bg-indigo-50 border rounded-lg shadow-md">
-        <p class="mb-1 font-bold">{{ T "roleTitle" | strings.FirstUpper }}</p>
-        <p x-bind="roleMe" class="text-3xl font-extrabold"></p>
-        <p class="max-w-96 mt-3 mb-6 text-sm font text-gray-500">{{ T "roleInfo" }}</p>
-        <a
-          x-bind="roleMeLink"
-          href="#"
-          class="inline-flex items-center gap-x-2 rounded-lg bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white  hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-          {{ T "readRoleLink" }}
-        </a>
+      <div class="flex-grow sm:w-full md:basis-1 flex flex-col gap-3 items-center justify-center p-9 bg-indigo-50 border rounded-lg shadow-md">
+        <div class="flex flex-col items-center">
+          <p class="mb-1">{{ T "groupTitle" | strings.FirstUpper }}</p>
+          <p x-bind="groupMe" class="text-3xl font-extrabold"></p>
+        </div>
+        <div class="flex flex-col items-center">
+          <p class="mb-1">{{ T "roleTitle" | strings.FirstUpper }}</p>
+          <p x-bind="roleMe" class="text-3xl font-extrabold"></p>
+          <p class="max-w-96 my-3 text-sm">{{ T "roleInfo" }}</p>
+          <a
+            x-bind="roleMeLink"
+            href="#"
+            class="inline-flex items-center gap-x-2 rounded-lg bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white  hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            {{ T "readRoleLink" }}
+          </a>
+        </div>
       </div>
     </div>
   </div>

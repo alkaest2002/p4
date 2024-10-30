@@ -18,6 +18,12 @@ export default () => ({
     },
   },
 
+  groupMe: {
+    ["x-text"]() {
+      return this.$store.keirsey.getGroup("me");
+    },
+  },
+
   answersMeLink: {
     ["@click.prevent"]() {
       this.$store.navigation.goToPage("kts/answers");
