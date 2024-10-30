@@ -12,8 +12,8 @@ fetchErrorMessage: "&rarr; Si è verificato un errore nel caricamento dei dati. 
 item: quesito
 latency: latenza
 loadCompressedAnswers: invia codici
-matchInputOther: Il codice risposta dell'altra persona
-matchInputSelf: Il tuo codice risposta
+matchInputYou: Il codice risposta dell'altra persona
+matchInput: Il tuo codice risposta
 next: succ
 noResults: "&rarr; Attenzione! Completa il test prima di accedere a questa pagina."
 previous: prec

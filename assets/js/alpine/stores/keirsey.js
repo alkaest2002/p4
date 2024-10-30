@@ -9,23 +9,23 @@ const getBlanckDimensions = () => ({
 
 const stateFn = () => [
   [ "roles", []],
-  [ "self", {} ],
-  [ "other", {} ]
+  [ "me", {} ],
+  [ "you", {} ]
 ];
 
 export default (Alpine) => ({
   
   ...initState(stateFn, Alpine),
 
-  get roleSelf() {
-    return this.getRole("self");
+  get roleMe() {
+    return this.getRole("me");
   },
 
-  get roleOther() {
-    return this.getRole("other");
+  get roleYou() {
+    return this.getRole("you");
   },
 
-  getRole(person = "self") {
+  getRole(person = "me") {
     const type = this.getType(person);
     return this.roles[type];
   },
@@ -34,7 +34,7 @@ export default (Alpine) => ({
     this.roles = roles;
   },
 
-  computeDimensions(person = "self", answers) {
+  computeDimensions(person = "me", answers) {
     this[person] = getBlanckDimensions();
     Object.values(answers).forEach(answer => {
       const { dimension, latency}  = answer;
@@ -43,14 +43,14 @@ export default (Alpine) => ({
     });
   },
 
-  getTypeWithCoherenceValue(person = "self") {
+  getTypeWithCoherenceValue(person = "me") {
     return [["I","E"], ["N","S"], ["T","F"], ["J","P"]]
       .map(couples => couples.map(single => [ single, this[person].dimensions.counts[single] ]))
       .map(couples => couples.sort((a, b) => b.at(1) - a.at(1)))
       .map(couples => [ couples.at(0).at(0), couples.at(0).at(1) - couples.at(1).at(1)])
   },
 
-  getType(person = "self") {
+  getType(person = "me") {
     const type = this.getTypeWithCoherenceValue(person).map(el => el[0]).join("");
     return "EINSFTJP".split("").filter(el => type.indexOf(el) > -1).join("");
   },

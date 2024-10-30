@@ -11,31 +11,31 @@
     </div>
     <div id="content">{{ .Content }}</div>
     <div class="mt-6 mb-3">
-        <label for="self" class="block mb-2 font-medium text-gray-900 dark:text-white">{{ T "matchInputSelf"}}</label>
+        <label for="me" class="block mb-2 font-medium text-gray-900 dark:text-white">{{ T "matchInput"}}</label>
         <input 
-            x-bind="selfInput"
+            x-bind="meInput"
             autocomplete="off"
             type="text" 
-            id="self"
+            id="me"
             class="block w-full p-4 border border-gray-300 rounded-lg bg-gray-50 text-base"
         >
         <span
             x-cloak
-            x-bind="validationErrorSelf"
+            x-bind="validationErrorMe"
             class="text-sm text-red-700 mt-1">{{ T "validationError" }}</span>
     </div>
     <div class="my-3">
-        <label for="other" class="block mb-2 font-medium text-gray-900 dark:text-white">{{ T "matchInputOther"}}</label>
+        <label for="you" class="block mb-2 font-medium text-gray-900 dark:text-white">{{ T "matchInputYou"}}</label>
         <input
-            x-bind="otherInput"
+            x-bind="youInput"
             autocomplete="off"
             type="text" 
-            id="other" 
+            id="you" 
             class="block w-full p-4 border border-gray-300 rounded-lg bg-gray-50 text-base"
         >
         <span
             x-cloak 
-            x-bind="validationErrorOther" 
+            x-bind="validationErrorYou" 
             class="text-sm text-red-700 mt-1">{{ T "validationError" }}</span>
     </div>
     <a

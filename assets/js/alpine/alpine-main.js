@@ -6,7 +6,7 @@ import sApp from "./stores/app";
 import sNavigation from "./stores/navigation";
 import sKeirsey from "./stores/keirsey";
 import sQuestionnaire from "./stores/questionnaire";
-import sMatch from "./stores/match";
+import sAnswers from "./stores/answers";
 
 // views
 import vBase from "./views/base";
@@ -26,7 +26,7 @@ Alpine.store("app", sApp(Alpine));
 Alpine.store("navigation", sNavigation(Alpine));
 Alpine.store("keirsey", sKeirsey(Alpine));
 Alpine.store("questionnaire", sQuestionnaire(Alpine));
-Alpine.store("match", sMatch(Alpine));
+Alpine.store("answers", sAnswers(Alpine));
 Alpine.data("base", vBase);
 Alpine.data("menu", vMenu);
 Alpine.data("home", vHome);

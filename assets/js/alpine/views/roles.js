@@ -2,19 +2,19 @@ export default () => ({
   
   initRoles() {},
 
-  roleSelf: {
-    ["x-ref"]: "roleSelf",
+  roleMe: {
+    ["x-ref"]: "roleMe",
 
     ["x-text"]() {
-      return this.$store.keirsey.roleSelf
+      return this.$store.keirsey.roleMe
     }
   },
 
-  roleOther: {
-    ["x-ref"]: "roleOther",
+  roleYou: {
+    ["x-ref"]: "roleYou",
 
     ["x-text"]() {
-      return this.$store.keirsey.roleOther
+      return this.$store.keirsey.roleYou
     }
   }
 });

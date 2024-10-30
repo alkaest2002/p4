@@ -1,54 +1,54 @@
 export default () => ({
 
-  compressedAnswersSelf: "",
-  compressedAnswersOther: "",
-  passValidationSelf: true,
-  passValidationOther: true,
+  compressedAnswersMe: "",
+  compressedAnswersYou: "",
+  passValidationMe: true,
+  passValidationYou: true,
 
   initMatch() {},
 
-  selfInput: {
+  meInput: {
 
-    ["x-ref"]: "selfInput",
+    ["x-ref"]: "meInput",
 
-    ["x-model"]: "compressedAnswersSelf",
+    ["x-model"]: "compressedAnswersMe",
 
     [":class"]() {
-      return this.passValidationSelf
+      return this.passValidationMe
         ? "focus:ring-indigo-700 focus:border-indigo-700"
         : "ring-red-700 border-red-700 text-red-700"
     }
   },
 
-  validationErrorSelf: {
+  validationError: {
     
-    ["x-ref"]: "validationErrorSelf",
+    ["x-ref"]: "validationError",
 
     [":class"]() {
-      return this.passValidationSelf
+      return this.passValidationMe
         ? "invisible"
         : "block"
     }
   },
 
-  otherInput: {
+  youInput: {
 
-    ["x-ref"]: "otherInput",
+    ["x-ref"]: "youInput",
 
-    ["x-model"]: "compressedAnswersOther",
+    ["x-model"]: "compressedAnswersYou",
 
     [":class"]() {
-      return this.passValidationOther
+      return this.passValidationYou
         ? "focus:ring-indigo-700 focus:border-indigo-700"
         : "ring-red-700 border-red-700"
     }
   },
 
-  validationErrorOther: {
-    ["x-ref"]: "validationErrorOther",
+  validationErrorYou: {
+    ["x-ref"]: "validationErrorYou",
 
     [":class"]() {
-      return this.passValidationOther
+      return this.passValidationYou
         ? "invisible"
         : "block"
     }
@@ -59,11 +59,11 @@ export default () => ({
     ["x-ref"]: "compressedAnswersButton",
 
     ["@click.prevent"]() {     
-      this.passValidationSelf  = this.$store.match.checkValidityofCompressedString(this.compressedAnswersSelf); 
-      this.passValidationOther = this.$store.match.checkValidityofCompressedString(this.compressedAnswersOther);       
-      this.passValidationSelf
-        && this.passValidationOther
-        && this.$store.match.setAnswersSelfAndOther(this.compressedAnswersSelf, this.compressedAnswersOther);
+      this.passValidationMe  = this.$store.match.checkValidityofCompressedString(this.compressedAnswersMe); 
+      this.passValidationYou = this.$store.match.checkValidityofCompressedString(this.compressedAnswersYou);       
+      this.passValidationMe
+        && this.passValidationYou
+        && this.$store.match.setAnswersAndYou(this.compressedAnswersMe, this.compressedAnswersYou);
       this.$store.navigation.goToPage("match/roles");
     }
   }

@@ -4,10 +4,10 @@ export default () => ({
   orderBy: "itemId",
 
   initAnswers() {
-    this.itemsWithAnswers = this.$store.questionnaire.itemsWithAnswers;
+    this.itemsWithAnswers = this.$store.answers.getItemsWithAnswers("me");
     this.$watch("orderBy", val => {
-      val === "itemId" && (this.itemsWithAnswers = this.$store.questionnaire.itemsWithAnswers)
-      val === "latency" && (this.itemsWithAnswers = this.$store.questionnaire.itemsWithAnswers
+      val === "itemId" && (this.itemsWithAnswers  = this.$store.answers.getItemsWithAnswers("me"))
+      val === "latency" && (this.itemsWithAnswers = this.$store.answers.getItemsWithAnswers("me")
         .sort((a, b) => b.answer.latency - a.answer.latency))
     })
   },
