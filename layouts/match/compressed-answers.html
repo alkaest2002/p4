@@ -1,6 +1,8 @@
 {{- define "main" }}
 <div
-    x-data="match"
+    x-ref="matchAnswers"
+    x-data="matchAnswers"
+    x-init="initMatchAnswers"
     class="flex-grow w-full"
 >
     <div class="mb-6">

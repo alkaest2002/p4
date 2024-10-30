@@ -9,7 +9,7 @@ export default () => ({
   optionHighlightClass: "bg-indigo-50",
   epoch: Date.now(),
 
-  async initQuestionnaire() {
+  async initKtsQuestionnaire() {
     this.$watch("$store.questionnaire.currentItemIndex", () => this.epoch = Date.now());
     // just in case (this data should already be present by now)
     if (
@@ -59,7 +59,7 @@ export default () => ({
     this.$store.answers.setAnswer(option, Date.now()-this.epoch);
   },
 
-  "notifyFetching": {
+  notifyFetching: {
     ["x-ref"]: "notifyFetching",
 
     ["x-show"]() {
@@ -67,11 +67,11 @@ export default () => ({
     },
 
     ["x-html"]() {
-      return this.$refs.questionnaire.dataset.fetchingMessage;
+      return this.$refs.ktsQuestionnaire.dataset.fetchingMessage;
     }
   },
 
-  "notifyError": {
+  notifyError: {
     ["x-ref"]: "notifyError",
 
     ["x-show"]() {
@@ -79,11 +79,11 @@ export default () => ({
     },
 
     ["x-html"]() {
-      return this.$refs.questionnaire.dataset.fetchErrorMessage;
+      return this.$refs.ktsQuestionnaire.dataset.fetchErrorMessage;
     }
   },
 
-  "item": {
+  item: {
     ["x-ref"]: "item",
 
     ["x-show"]() {
@@ -96,7 +96,7 @@ export default () => ({
     }
   },
 
-  "itemNumber": {
+  itemNumber: {
     ["x-ref"]: "itemNumber",
 
     ["x-text"]() {
@@ -104,7 +104,7 @@ export default () => ({
     },
   },
 
-  "itemText": {
+  itemText: {
     ["x-ref"]: "itemText",
 
     ["x-text"]() {
@@ -112,7 +112,7 @@ export default () => ({
     },
   },
 
-  "counter": {
+  counter: {
     ["x-ref"]: "counter",
 
     ["x-html"]() {
@@ -121,7 +121,7 @@ export default () => ({
     },
   },
 
-  "optionA": {
+  optionA: {
     ["x-ref"]: "optionA",
 
     ["x-text"]() {
@@ -140,7 +140,7 @@ export default () => ({
     }
   },
 
-  "optionB": {
+  optionB: {
     ["x-ref"]: "optionB",
 
     ["x-text"]() {
@@ -159,7 +159,7 @@ export default () => ({
     }
   },
 
-  "nextButton": {
+  nextButton: {
     ["x-ref"]: "nextButton",
 
     ["@click.prevent"]() {
@@ -181,7 +181,7 @@ export default () => ({
     },
   },
 
-  "prevButton": {
+  prevButton: {
     ["x-ref"]: "prevButton",
 
     ["@click.prevent"]() {

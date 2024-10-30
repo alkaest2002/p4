@@ -1,6 +1,6 @@
 export default () => ({
   
-  initRoles() {},
+  initMatchRoles() {},
 
   roleMe: {
     ["x-ref"]: "roleMe",

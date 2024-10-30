@@ -6,9 +6,10 @@
       {{ T "readingTime" .ReadingTime }}
     </span>
   </div>
-  <div 
-    x-data="results"
-    x-init="initResults"
+  <div
+    x-ref="ktsResults"
+    x-data="ktsResults"
+    x-init="initKtsResults"
   >
     {{- partialCached "base/no-results" . }}
     <div
@@ -21,10 +22,12 @@
       </div>
       <div class="flex-grow md:basis-1 flex flex-col items-center justify-center p-5 border rounded-lg shadow-md">
         <p class="mb-3 font-bold">{{ T "roleTitle" | strings.FirstUpper }}</p>
-        <span x-bind="role" class="text-3xl font-extrabold"></span>
+        <span 
+          x-bind="roleMe" 
+          class="text-3xl font-extrabold"></span>
         <p class="max-w-96 my-3 text-sm font text-gray-500">{{ T "roleInfo" }}</p>
         <a
-          x-bind="roleLink"
+          x-bind="roleMeLink"
           href="#"
           class="inline-flex items-center gap-x-2 rounded-lg bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white  hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
           {{ T "readRoleButton" }}
@@ -35,7 +38,7 @@
         <span x-bind="compressedAnswersMe" class="text-3xl font-extrabold"></span>
         <p class="max-w-96 my-3 text-center text-sm text-gray-500">{{ T "compressedAnswersInfo" }}</p>
         <a
-          x-bind="answersLink"
+          x-bind="answersMeLink"
           href="#"
           class="inline-flex items-center gap-x-2 rounded-lg bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white  hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
           >

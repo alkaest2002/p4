@@ -12,11 +12,11 @@ import sAnswers from "./stores/answers";
 import vBase from "./views/base";
 import vMenu from "./views/menu";
 import vHome from "./views/home";
-import vQuestionnaire from "./views/questionnaire";
-import vAnswers from "./views/answers";
-import vResults from "./views/results";
-import vMatch from "./views/match";
-import vRoles from "./views/roles";
+import vKtsQuestionnaire from "./views/kts.questionnaire";
+import vKtsAnswers from "./views/kts.answers";
+import vKtsResults from "./views/kts.results";
+import vMatchAnswers from "./views/match.answers";
+import vMatchRoles from "./views/match.roles";
 
 // components
 import cDropdown from "./components/dropdown";
@@ -30,11 +30,11 @@ Alpine.store("answers", sAnswers(Alpine));
 Alpine.data("base", vBase);
 Alpine.data("menu", vMenu);
 Alpine.data("home", vHome);
-Alpine.data("questionnaire", vQuestionnaire);
-Alpine.data("answers", vAnswers);
-Alpine.data("results", vResults);
-Alpine.data("match", vMatch);
-Alpine.data("roles", vRoles);
+Alpine.data("ktsQuestionnaire", vKtsQuestionnaire);
+Alpine.data("ktsAnswers", vKtsAnswers);
+Alpine.data("ktsResults", vKtsResults);
+Alpine.data("matchAnswers", vMatchAnswers);
+Alpine.data("matchRoles", vMatchRoles);
 
 Alpine.data("dropdown", cDropdown);
 

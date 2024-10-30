@@ -31,13 +31,6 @@ export default (Alpine) => ({
     return this.getCurrentAnswer(person)?.answerValue;
   },
 
-  getCompressedAnswers(person = "me") {
-    const answers = this[person].answers.map(({ answerValue }) => answerValue).join("");
-    return answers.length > 0
-      ? compressString(answers)
-      : undefined
-  },
-
   getItemsWithAnswers(answers) {
     return Object.values(this.$store.questionnaire.items)
       .map((el, index) => ({
@@ -65,10 +58,10 @@ export default (Alpine) => ({
     const currentItem = Alpine.store("questionnaire").currentItem;
     const isLastItem = Alpine.store("questionnaire").isLastItem
     const dimension = currentItem.options[answerValue].dimension;
-    console.log(this.currentAnswer)
     const latency = (this.currentAnswer?.latency || 0) + answerlatency;
     this["me"].answers.splice(currentItemIndex, 1, { answerValue, dimension, latency });
     isLastItem && Alpine.store("keirsey").computeDimensions("me", this["me"].answers);
+    isLastItem && this.setCompressedAnswers("me");
   },
 
   setAnswers(person) {
@@ -82,6 +75,13 @@ export default (Alpine) => ({
         } 
       });
     Alpine.store("keirsey").computeDimensions(person, this[person].answers);
+  },
+
+  setCompressedAnswers(person = "me") {
+    const answers = this[person].answers.map(({ answerValue }) => answerValue).join("");
+    this[person].compressedAnswers = answers.length > 0
+      ? compressString(answers)
+      : undefined
   },
 
   setAnswersMeAndYou(compressedAnswers, compressedAnswersYou) {

@@ -3,7 +3,7 @@ export default () => ({
   itemsWithAnswers: null,
   orderBy: "itemId",
 
-  initAnswers() {
+  initKtsAnswers() {
     this.itemsWithAnswers = this.$store.answers.getItemsWithAnswers("me");
     this.$watch("orderBy", val => {
       val === "itemId" && (this.itemsWithAnswers  = this.$store.answers.getItemsWithAnswers("me"))

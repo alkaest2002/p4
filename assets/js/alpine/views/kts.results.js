@@ -1,27 +1,28 @@
 export default () => ({
-  initResults() {},
+  
+  initKtsResults() {},
 
-  "role": {
+  roleMe: {
     ["x-text"]() {
       return this.$store.keirsey.getRole("me");
     },
   },
 
-  "roleLink": {
+  roleMeLink: {
     ["@click.prevent"]() {
       this.$store.navigation.goToPage(this.$store.keirsey.getType("me"));
     },
   },
 
-  "answersLink": {
+  answersMeLink: {
     ["@click.prevent"]() {
       this.$store.navigation.goToPage("kts/answers");
     },
   },
 
-  "compressedAnswersMe": {
+  compressedAnswersMe: {
     ["x-text"]() {
-      return this.$store.answers.getCompressedAnswers("me");
+      return this.$store.answers["me"].compressedAnswers;
     }
   }
 });

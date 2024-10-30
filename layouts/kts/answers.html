@@ -7,8 +7,9 @@
     </span>
   </div>
   <div
-    x-data="answers"
-    x-init="initAnswers"
+    x-ref="ktsAnswer"
+    x-data="ktsAnswers"
+    x-init="initKtsAnswers"
   >
     {{- partialCached "base/no-results" . }}
     <div

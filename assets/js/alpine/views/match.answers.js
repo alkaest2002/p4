@@ -1,11 +1,13 @@
 export default () => ({
 
-  compressedAnswersMe: "aaa",
-  compressedAnswersYou: "bbb",
+  compressedAnswersMe: "",
+  compressedAnswersYou: "",
   passValidationMe: true,
   passValidationYou: true,
 
-  initMatch() {},
+  initMatchAnswers() {
+    this.compressedAnswersMe = this.$store.answers["me"].compressedAnswers;
+  },
 
   meInput: {
 
