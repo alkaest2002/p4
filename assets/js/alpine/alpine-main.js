@@ -16,7 +16,7 @@ import vKtsQuestionnaire from "./views/kts.questionnaire";
 import vKtsAnswers from "./views/kts.answers";
 import vKtsResults from "./views/kts.results";
 import vMatchAnswers from "./views/match.answers";
-import vMatchRoles from "./views/match.roles";
+import vMatchConvergence from "./views/match.convergence";
 
 // components
 import cDropdown from "./components/dropdown";
@@ -34,7 +34,7 @@ Alpine.data("ktsQuestionnaire", vKtsQuestionnaire);
 Alpine.data("ktsAnswers", vKtsAnswers);
 Alpine.data("ktsResults", vKtsResults);
 Alpine.data("matchAnswers", vMatchAnswers);
-Alpine.data("matchRoles", vMatchRoles);
+Alpine.data("matchConvergence", vMatchConvergence);
 
 Alpine.data("dropdown", cDropdown);
 

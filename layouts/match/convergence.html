@@ -1,0 +1,26 @@
+{{- define "main" }}
+<div
+    x-ref="matchConvergence"
+    x-data="matchConvergence"
+    x-init="initMatchConvergence"
+    class="flex-grow w-full">
+    <div class="mb-6">
+        <h1 class="text-xl font-bold">{{ .Title }}</h1>
+        <span class="text-sm text-gray-500">
+            {{ T "readingTime" .ReadingTime }}
+        </span>
+    </div>
+    <div id="content" class="mb-6">{{ .Content }}</div>
+    <div class="mt-6 flex flex-col items-center justify-center border border-gray-300 rounded-lg shadow-md">
+        <div class="w-full flex flex-col text-center pt-5">
+            <span class="text-gray-500">Il tuo ruolo</span>
+            <span x-bind="roleMe" class="block w-full text-2xl font-bold"></span>
+        </div>
+        <span x-bind="convergence" class="text-[100px] font-extrabold text-indigo-700"></span>
+        <div class="w-full flex flex-col text-center pb-5">
+            <span class="text-gray-500">il ruolo del tuo match</span>
+            <span x-bind="roleYou" class="block w-full text-2xl font-bold"></span>
+        </div>
+    </div>
+</div>
+{{- end }}

@@ -1,6 +1,6 @@
 export default () => ({
   
-  initMatchRoles() {},
+  initMatchConvergence() {},
 
   roleMe: {
     ["x-ref"]: "roleMe",
@@ -15,6 +15,14 @@ export default () => ({
 
     ["x-text"]() {
       return this.$store.keirsey.roleYou
+    }
+  },
+
+  convergence: {
+    ["x-ref"]: "convergence",
+
+    ["x-text"]() {
+      return this.$store.keirsey.computeConvergenceScoreBetweenMeandYou();
     }
   }
 });

@@ -65,7 +65,11 @@ export default (Alpine) => ({
   },
 
   setAnswers(person) {
-    this[person].answers = decompressString(this[person].compressedAnswers, 13)
+    const decompressedString = decompressString(
+      this[person].compressedAnswers,
+      Alpine.store("questionnaire").items.length
+    );
+    this[person].answers = decompressedString
       .split("")
       .map((answerValue, index) => {
         return { 
