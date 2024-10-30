@@ -1,6 +1,8 @@
 ---
 title: ENTP
+linkTitle: Inventor
 role: inventor
+type: rationalist
 aliases:
   - /types/ENTP
 ---

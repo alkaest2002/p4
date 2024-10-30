@@ -1,6 +1,8 @@
 ---
 title: ISFJ
-role: protector
+linkTitle: Protecotor
+role: Protecotor
+type: guardian
 aliases:
   - /types/ISFJ
 ---

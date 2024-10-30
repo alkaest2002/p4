@@ -1,6 +1,10 @@
 export default () => ({
   
-  initKtsResults() {},
+  answersHaveLatencies: false,
+  
+  initKtsResults() {
+    this.answersHaveLatencies = this.$store.answers.getAnswersHaveLatencies("me");
+  },
 
   roleMe: {
     ["x-text"]() {

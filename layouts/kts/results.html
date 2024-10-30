@@ -1,10 +1,7 @@
 {{- define "main" }}
 <div class="flex-grow">
   <div class="mb-6">
-    <h1 class="text-xl font-bold">{{ .Title }}</h1>
-    <span class="text-sm text-gray-500">
-      {{ T "readingTime" .ReadingTime }}
-    </span>
+    <h1 class="font-bold text-xl text-center">{{ .Title }}</h1>
   </div>
   <div
     x-ref="ktsResults"
@@ -15,34 +12,28 @@
     <div
       x-cloak
       x-show="$store.questionnaire.isComplete"
-      class="flex flex-wrap gap-6 space-between mb-3"
+      class="flex flex-wrap gap-6 space-between"
     >
-      <div id="content">
-        {{ .Content }}
+      <div class="flex-grow sm:w-full md:basis-1 flex flex-col items-center justify-center p-5 border rounded-lg shadow-md">
+        <p class="mb-1 font-bold">{{ T "compressedAnswersTitle" | strings.FirstUpper }}</p>
+        <p x-bind="compressedAnswersMe" class="text-3xl font-extrabold"></p>
+        <p class="max-w-96 mt-3 mb-6 text-center text-sm text-gray-500">{{ T "compressedAnswersInfo" }}</p>
+        <a
+          x-bind="answersMeLink"
+          href="#"
+          class="inline-flex items-center gap-x-2 rounded-lg bg-orange-700 px-5 py-2.5 text-sm font-semibold text-white  hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+          <span>{{ T "readAnswersLink" }}</span>
+        </a>
       </div>
-      <div class="flex-grow md:basis-1 flex flex-col items-center justify-center p-5 border rounded-lg shadow-md">
-        <p class="mb-3 font-bold">{{ T "roleTitle" | strings.FirstUpper }}</p>
-        <span 
-          x-bind="roleMe" 
-          class="text-3xl font-extrabold"></span>
-        <p class="max-w-96 my-3 text-sm font text-gray-500">{{ T "roleInfo" }}</p>
+      <div class="flex-grow sm:w-full md:basis-1 flex flex-col items-center justify-center p-5 bg-indigo-50 border rounded-lg shadow-md">
+        <p class="mb-1 font-bold">{{ T "roleTitle" | strings.FirstUpper }}</p>
+        <p x-bind="roleMe" class="text-3xl font-extrabold"></p>
+        <p class="max-w-96 mt-3 mb-6 text-sm font text-gray-500">{{ T "roleInfo" }}</p>
         <a
           x-bind="roleMeLink"
           href="#"
           class="inline-flex items-center gap-x-2 rounded-lg bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white  hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-          {{ T "readRoleButton" }}
-        </a>
-      </div>
-      <div class="flex-grow md:basis-1 flex flex-col items-center justify-center p-5 border rounded-lg shadow-md">
-        <p class="mb-3 font-bold">{{ T "compressedAnswersTitle" | strings.FirstUpper }}</p>
-        <span x-bind="compressedAnswersMe" class="text-3xl font-extrabold"></span>
-        <p class="max-w-96 my-3 text-center text-sm text-gray-500">{{ T "compressedAnswersInfo" }}</p>
-        <a
-          x-bind="answersMeLink"
-          href="#"
-          class="inline-flex items-center gap-x-2 rounded-lg bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white  hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
-          >
-          <span>{{ T "answersButton" }}</span>
+          {{ T "readRoleLink" }}
         </a>
       </div>
     </div>

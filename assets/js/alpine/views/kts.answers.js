@@ -1,23 +1,15 @@
 export default () => ({
 
   itemsWithAnswers: null,
+  answersHaveLatencies: false,
   orderBy: "itemId",
 
   initKtsAnswers() {
+    this.answersHaveLatencies = this.$store.answers.getAnswersHaveLatencies("me");
     this.itemsWithAnswers = this.$store.answers.getItemsWithAnswers("me");
-    this.$watch("orderBy", val => {
-      val === "itemId" && (this.itemsWithAnswers  = this.$store.answers.getItemsWithAnswers("me"))
-      val === "latency" && (this.itemsWithAnswers = this.$store.answers.getItemsWithAnswers("me")
-        .sort((a, b) => b.answer.latency - a.answer.latency))
-    })
-  },
-
-  sortBy: {
-    ["@click.prevent"]() {
-      this.orderBy = this.orderBy === "itemId"
-        ? "latency"
-        : "itemId";
-    }
+    this.answersHaveLatencies && (this.itemsWithAnswers = this.itemsWithAnswers
+      .sort((a, b) => b.answer.latency - a.answer.latency)
+    );
   },
 
   items: {
@@ -35,11 +27,10 @@ export default () => ({
       },
       
       ":class"() {
-        return answer.answerValue === optionValue
+        return answer?.answerValue === optionValue
           ? "font-semibold"
-          : "text-sm italic text-gray-400"
+          : "text-sm text-gray-400"
       }
     }
   },
-
 });

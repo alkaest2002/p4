@@ -31,22 +31,20 @@ export default (Alpine) => ({
     return this.getCurrentAnswer(person)?.answerValue;
   },
 
-  getItemsWithAnswers(answers) {
-    return Object.values(this.$store.questionnaire.items)
+  getItemsWithAnswers(person) {
+    return Object.values(Alpine.store("questionnaire").items)
       .map((el, index) => ({
         itemId: el.id,
         itemA: `${el.text}... ${el.options.a.text}`,
         itemB: `${el.text}... ${el.options.b.text}`,
-        answer: answers[index]
+        answer: this[person].answers[index]
       }));
   },
 
-  getItemsWithAnswersMe() {
-    return this.getItemsWithAnswers(this["me"].answers);
-  },
-
-  getItemsWithAnswersYou() {
-    return this.getItemsWithAnswers(this["you"].answers);
+  getAnswersHaveLatencies(person="me") {
+    return this[person].answers.every(answer => {
+      return !isNaN(answer.latency) && answer.latency !== null && answer.latency !== '' && isFinite(answer.latency)
+    })
   },
 
   checkValidityofCompressedString(compressedString) {
