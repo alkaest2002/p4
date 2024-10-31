@@ -7,6 +7,7 @@ export default () => ({
 
   initMatchAnswers() {
     this.compressedAnswersMe = this.$store.answers["me"].compressedAnswers;
+    this.compressedAnswersYou = this.$store.answers["you"].compressedAnswers;
   },
 
   meInput: {
