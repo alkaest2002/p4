@@ -27,12 +27,12 @@
               <div x-text="itemId.slice(-3)" class="font-extrabold text-xl"></div>
               <div
                 x-show="answersHaveLatencies" 
-                class="text-sm"><span x-text="((answer?.latency || 0) / 1000).toFixed(2)"></span> {{ T "sec" }}
+                class="text-sm"><span x-text="((answerMe.latency || 0) / 1000).toFixed(2)"></span> {{ T "sec" }}
               </div>
             </div>
             <div class="mt-3">
-              <p x-bind="item(itemA, 'a', answer)"></p>
-              <p x-bind="item(itemB, 'b', answer)"></p>
+              <p x-bind="item(itemA, 'a', answerMe)"></p>
+              <p x-bind="item(itemB, 'b', answerMe)"></p>
             </div>
           </div>
         </template>

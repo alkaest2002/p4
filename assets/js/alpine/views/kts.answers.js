@@ -5,8 +5,8 @@ export default () => ({
   orderBy: "itemId",
 
   initKtsAnswers() {
-    this.answersHaveLatencies = this.$store.answers.getAnswersHaveLatencies("me");
-    this.itemsWithAnswers = this.$store.answers.getItemsWithAnswers("me");
+    this.answersHaveLatencies = this.$store.answers.answersHaveLatencies;
+    this.itemsWithAnswers = this.$store.answers.itemsWithAnswers;
     this.answersHaveLatencies && (this.itemsWithAnswers = this.itemsWithAnswers
       .sort((a, b) => b.answer.latency - a.answer.latency)
     );
@@ -14,7 +14,7 @@ export default () => ({
 
   items: {
     
-    ["x-for"]: "{ itemId, itemA, itemB, answer } in itemsWithAnswers",
+    ["x-for"]: "{ itemId, itemA, itemB, answerMe } in itemsWithAnswers",
     
     [":key"]: "itemId"
   },

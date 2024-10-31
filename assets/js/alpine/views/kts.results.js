@@ -3,7 +3,7 @@ export default () => ({
   answersHaveLatencies: false,
   
   initKtsResults() {
-    this.answersHaveLatencies = this.$store.answers.getAnswersHaveLatencies("me");
+    this.answersHaveLatencies = this.$store.answers.answersHaveLatencies;
   },
 
   roleMe: {

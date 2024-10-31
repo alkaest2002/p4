@@ -22,6 +22,23 @@ export default (Alpine) => ({
   
   ...initState(stateFn, Alpine, "_answers"),
 
+  get itemsWithAnswers() {
+    return Object.values(Alpine.store("questionnaire").items)
+      .map((el, index) => ({
+        itemId: el.id,
+        itemA: `${el.text}... ${el.options.a.text}`,
+        itemB: `${el.text}... ${el.options.b.text}`,
+        answerMe: this["me"].answers[index],
+        answerYou: this["you"].answers[index]
+      }));
+  },
+
+  get answersHaveLatencies() {
+    return this["me"].answers.every(answer => {
+      return !isNaN(answer.latency) && answer.latency !== null && answer.latency !== '' && isFinite(answer.latency)
+    })
+  },
+
   getCurrentAnswer(person = "me") {
     const currentAnswerIndex = Alpine.store("questionnaire").currentItemIndex;
     return this[person].answers[currentAnswerIndex];
@@ -29,22 +46,6 @@ export default (Alpine) => ({
 
   getCurrentAnswerValue(person = "me") {
     return this.getCurrentAnswer(person)?.answerValue;
-  },
-
-  getItemsWithAnswers(person) {
-    return Object.values(Alpine.store("questionnaire").items)
-      .map((el, index) => ({
-        itemId: el.id,
-        itemA: `${el.text}... ${el.options.a.text}`,
-        itemB: `${el.text}... ${el.options.b.text}`,
-        answer: this[person].answers[index]
-      }));
-  },
-
-  getAnswersHaveLatencies(person="me") {
-    return this[person].answers.every(answer => {
-      return !isNaN(answer.latency) && answer.latency !== null && answer.latency !== '' && isFinite(answer.latency)
-    })
   },
 
   checkValidityofCompressedString(compressedString) {
