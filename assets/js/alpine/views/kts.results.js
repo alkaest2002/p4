@@ -34,5 +34,16 @@ export default () => ({
     ["x-text"]() {
       return this.$store.answers["me"].compressedAnswers;
     }
+  },
+
+  toClipboard: {
+    async ["@click.prevent"]() {
+      try {
+        await navigator.clipboard.writeText(this.$store.answers["me"].compressedAnswers);
+        console.log('content copied to clipboard');
+      } catch (err) {
+        console.error('failed to copy: ', err);
+      }
+    }
   }
 });
