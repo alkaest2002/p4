@@ -18,7 +18,7 @@ button:focus {
 }
 
 #content a:not(.rounded-lg) {
-    @apply text-indigo-700 underline;
+    @apply text-indigo-700;
 }
 
 #content ul {

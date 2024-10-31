@@ -9,10 +9,10 @@ Il Capitolo 1 si concentra sul temperamento e sul carattere. Alcuni lettori potr
 
 Dopo il **capitolo 1**, i lettori sono incoraggiati a {{< base/link type="link" text="completare il questionario" link="/kts" class="mt-3 mr-1" >}} ed esplorare il loro temperamento specifico:
 
-- {{< base/link text="Capitolo 2: gli artigiani (SP)" link="book/002-artisans/" >}}
-- {{< base/link text="Capitolo 3: i guardiani (SJ)" link="book/003-guardians/" >}}
-- {{< base/link text="Capitolo 4: gli idealisti (NF)" link="book/004-idealists/" >}}
-- {{< base/link text="Capitolo 5: i razionalisti (NT)" link="book/005-rationalists/" >}}
+- {{< base/link text="Capitolo 2: gli artigiani" link="book/002-artisans/" >}}
+- {{< base/link text="Capitolo 3: i guardiani" link="book/003-guardians/" >}}
+- {{< base/link text="Capitolo 4: gli idealisti" link="book/004-idealists/" >}}
+- {{< base/link text="Capitolo 5: i razionalisti" link="book/005-rationalists/" >}}
 
 Ogni capitolo include descrizioni delle cosiddette **varianti di ruolo**, che offrono più articolati approfondimenti. 
 
