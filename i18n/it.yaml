@@ -5,6 +5,9 @@ choose: scegli tra una delle due opzioni proposte
 chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e le frecce &larr; &rarr; per navigare tra i quesiti
 clickHere: clicca qui
 clickHereToCompareAnswers: per confrontare le tue risposte con quelle dell'altra persona.
+compareAnswersAll: mostra tutti
+compareAnswersSame: mostra uguali
+compareAnswersDifferent: mostra diversi
 compressedAnswersTitle: il tuo codice delle risposte
 compressedAnswersInfo: conserva questo codice per confrontare le tue risposte con quelle di un'altra persona.
 consentButton: accetta & prosegui
@@ -16,6 +19,7 @@ latency: latenza
 loadCompressedAnswers: invia codici
 matchInputYou: Il codice risposta dell'altra persona
 matchInput: Il tuo codice risposta
+me: io
 next: succ
 noResults: "&rarr; Attenzione! Completa il test prima di accedere a questa pagina."
 previous: prec
@@ -35,3 +39,4 @@ sortAnswersByItemId: ordina per quesito
 sortAnswersByLatency: ordina per latenza
 toc: sommario
 validationError: dato non corretto
+you: l'altra persona
