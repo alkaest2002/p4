@@ -7,14 +7,16 @@
         <h1 class="text-xl font-bold">{{ .Title }}</h1>
     </div>
     <div id="content">{{ .Content }}</div>
-    <div>
-        <a @click="show = 'all'" href="#" class="text-indigo-700" >{{ T "compareAnswersAll" }}</a>
-        <a @click="show = 'same'" href="#" class="text-indigo-700" >{{ T "compareAnswersSame" }}</a>
-        <a @click="show = 'different'" href="#" class="text-indigo-700" >{{ T "compareAnswersDifferent" }}</a>
+    <div class="mb-6">
+        <span>mostra: </span>
+        <a @click="showIndex = 1" x-show="showIndex == 0" href="#" class="text-indigo-700" >{{ T "compareAnswersAll" }}</a>
+        <a x-cloak @click="showIndex = 2" x-show="showIndex == 1" href="#" class="text-indigo-700" >{{ T "compareAnswersSame" }}</a>
+        <a x-cloak @click="showIndex = 0" x-show="showIndex == 2" href="#" class="text-indigo-700" >{{ T "compareAnswersDifferent" }}</a>
+        <p class="text-sm text-gray-500">clicca per cambiare</p>
     </div>
     <div class="mt-3 flex flex-col gap-3 mb-3">
         <template x-bind="items">
-            <div class="p-4 text-wrap border rounded-lg shadow-md">
+            <div class="p-6 text-wrap border rounded-lg shadow-md">
                 <p x-text="itemId.slice(-3)" class="font-extrabold text-xl"></p>
                 <div class="my-3">
                     <div class="flex flex-wrap gap-1 mb-2">
