@@ -1,5 +1,5 @@
 ---
 title: Temperamento, carattere, personalità
-date: 2024-09-17
+order: 1.1
 ---
 {{< base/lorem count=2 >}}

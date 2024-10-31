@@ -1,8 +1,8 @@
 {{- define "main" }}
 {{ $currentPage := . }}
-{{ $chapters := .Pages.ByParam "chapter" }}
-{{ $chapters = where $chapters "Params.chapter" "gt" 0 }}
-{{ $paginator := .Paginate $chapters 10 }}
+{{ $pages := .Pages.ByParam "order" }}
+{{ $pages = where $pages "Params.order" "gt" 0 }}
+{{ $paginator := .Paginate $pages 10 }}
 <div class="flex-grow">
     <div class="mb-6">
         <h1 class="text-xl font-bold">{{ .Title }}</h1>

@@ -3,7 +3,7 @@ export default () => ({
   initMenu() {},
 
   closeMenu: {
-    ["x-ref"] : "cloaseMenu",
+    ["x-ref"] : "closeMenu",
 
     ["@click.prevent"]() {
       this.$store.navigation.goToLastVisited();

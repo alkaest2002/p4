@@ -1,6 +1,6 @@
 ---
 title: "Tipo 2: guardians"
 linkTitle: guardians
-chapter: 3
+order: 3
 ---
 Summary of chapter 3: guardians
