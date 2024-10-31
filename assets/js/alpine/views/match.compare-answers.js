@@ -5,31 +5,31 @@ export default () => ({
   showIndex: 0,  
 
   initMatchCompareAnswers() {
-    this.itemsWithAnswers = this.allAnswers;
+    this.itemsWithAnswers = this.getAllAnswers();
     this.$watch("showIndex", (val, oldVal) =>
       val !== oldVal && (this.itemsWithAnswers = this.getAnswers(val)))
   },
 
-  getAnswers(val)  {
-    return val == 0
-      ? this.allAnswers
-      : val == 1
-        ? this.sameAnswers
-        : this.differentAnswers
-  },
-
-  get allAnswers() {
+  getAllAnswers() {
     return this.$store.answers.itemsWithAnswers
   },
   
-  get sameAnswers() {
-    return this.allAnswers
+  getSameAnswers() {
+    return this.getAllAnswers()
       .filter(el => el.answerMe.answerValue === el.answerYou.answerValue);
   },
   
-  get differentAnswers() {
-    return this.allAnswers
+  getDifferentAnswers() {
+    return this.getAllAnswers()
       .filter(el => el.answerMe.answerValue != el.answerYou.answerValue)
+  },
+
+  getAnswers(val)  {
+    return val == 0
+      ? this.getAllAnswers()
+      : val == 1
+        ? this.getSameAnswers()
+        : this.getDifferentAnswers()
   },
 
   get show() {
@@ -41,6 +41,36 @@ export default () => ({
     ["x-for"]: "{ itemId, itemA, itemB, answerMe, answerYou } in itemsWithAnswers",
     
     [":key"]: "itemId"
+  },
+
+  showAllLink: {
+    ["x-ref"]: "showAllLink",
+
+    ["x-show"]: "showIndex == 0",
+
+    ["@click.prevent"]() {
+      this.showIndex = 1;
+    }
+  },
+
+  showSameLink: {
+    ["x-ref"]: "showSameLink",
+
+    ["x-show"]: "showIndex == 1",
+
+    ["@click.prevent"]() {
+      this.showIndex = 2;
+    }
+  },
+
+  showDifferentLink: {
+    ["x-ref"]: "showDifferentLink",
+
+    ["x-show"]: "showIndex == 2",
+
+    ["@click.prevent"]() {
+      this.showIndex = 0;
+    }
   },
 
  })
