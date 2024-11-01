@@ -6,9 +6,9 @@ export default () => ({
 
   initKtsAnswers() {
     this.answersHaveLatencies = this.$store.answers.answersHaveLatencies;
-    this.itemsWithAnswers = this.$store.answers.itemsWithAnswers;
+    this.itemsWithAnswers = this.$store.answers.getItemsWithAnswers();
     this.answersHaveLatencies && (this.itemsWithAnswers = this.itemsWithAnswers
-      .sort((a, b) => b.answer.latency - a.answer.latency)
+      .sort((a, b) => b.answerMe.latency - a.answerMe.latency)
     );
   },
 

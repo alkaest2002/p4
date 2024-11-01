@@ -13,6 +13,10 @@ button:focus {
     outline: none;
 }
 
+a {
+    @apply cursor-pointer;
+}
+
 #content p {
     @apply my-3;
 }

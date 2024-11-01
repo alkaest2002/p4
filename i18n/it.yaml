@@ -5,6 +5,7 @@ choose: scegli tra una delle due opzioni proposte
 chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e le frecce &larr; &rarr; per navigare tra i quesiti
 clickHere: clicca qui
 clickHereToCompareAnswers: per confrontare le tue risposte con quelle dell'altra persona.
+clickToChange: Clicca per cambiare
 compareAnswersAll: tutte le risposte
 compareAnswersSame: risposte uguali
 compareAnswersDifferent: risposte diverse
@@ -35,6 +36,7 @@ rightsReserved: I contenuti del sito sono concessi con licenza
 roleInfo: leggi le informazioni riguardanti il tuo ruolo
 roleTitle: il tuo ruolo
 sec: sec
+show: Mostra
 sortAnswersByItemId: ordina per quesito
 sortAnswersByLatency: ordina per latenza
 toc: sommario

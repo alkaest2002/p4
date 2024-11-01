@@ -22,7 +22,7 @@ export default (Alpine) => ({
   
   ...initState(stateFn, Alpine, "_answers"),
 
-  get itemsWithAnswers() {
+  getItemsWithAnswers() {
     return Object.values(Alpine.store("questionnaire").items)
       .map((el, index) => ({
         itemId: el.id,

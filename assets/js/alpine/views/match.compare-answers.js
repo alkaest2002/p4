@@ -11,7 +11,7 @@ export default () => ({
   },
 
   getAllAnswers() {
-    return this.$store.answers.itemsWithAnswers
+    return this.$store.answers.getItemsWithAnswers();
   },
   
   getSameAnswers() {
