@@ -22,6 +22,12 @@ export default (Alpine) => ({
   
   ...initState(stateFn, Alpine, "_answers"),
 
+  get answersHaveLatencies() {
+    return this["me"].answers.every(answer => {
+      return !isNaN(answer.latency) && answer.latency !== null && answer.latency !== '' && isFinite(answer.latency)
+    })
+  },
+
   getItemsWithAnswers() {
     return Object.values(Alpine.store("questionnaire").items)
       .map((el, index) => ({
@@ -33,12 +39,6 @@ export default (Alpine) => ({
       }));
   },
 
-  get answersHaveLatencies() {
-    return this["me"].answers.every(answer => {
-      return !isNaN(answer.latency) && answer.latency !== null && answer.latency !== '' && isFinite(answer.latency)
-    })
-  },
-
   getCurrentAnswer(person = "me") {
     const currentAnswerIndex = Alpine.store("questionnaire").currentItemIndex;
     return this[person].answers[currentAnswerIndex];
@@ -48,7 +48,7 @@ export default (Alpine) => ({
     return this.getCurrentAnswer(person)?.answerValue;
   },
 
-  checkValidityofCompressedString(compressedString) {
+  checkValidityOfCompressedString(compressedString) {
     return /^[A-Za-z0-9+/]+$/.test(compressedString);
   },
 
