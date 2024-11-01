@@ -87,11 +87,13 @@ export default (Alpine) => ({
       : undefined
   },
 
-  setAnswersMeAndYou(compressedAnswers, compressedAnswersYou) {
-    this.wipeState();
-    this["me"].compressedAnswers = compressedAnswers;
+  setAnswersMeAndYou(compressedAnswersMe, compressedAnswersYou) {
+    const shouldComputeMe = compressedAnswersMe !== this["me"].compressedAnswers
+    const omit = shouldComputeMe ? null : ["me"];
+    this.wipeState(omit);
+    shouldComputeMe && (this["me"].compressedAnswers = compressedAnswersMe);
+    shouldComputeMe && this.setAnswers("me");
     this["you"].compressedAnswers = compressedAnswersYou;
-    this.setAnswers("me");
     this.setAnswers("you");
   },
 
