@@ -12,6 +12,7 @@ export default () => ({
     },
     
     ["@htmx:before-swap.camel"]({ detail }) {
+      // manage rediredìcts
       const res = detail.serverResponse;
       if (res.indexOf("canonical") > -1) {
         const match = res.match(/http-equiv.+url=(.+)"/m);

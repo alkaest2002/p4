@@ -79,9 +79,7 @@ export default (Alpine) => ({
     const you = Object.entries(this["you"].dimensions.counts)
       .sort((a,b) => a[0].localeCompare(b[0])).map(el => el[1]);
     const sumOfDifferences = me.reduce((acc, itr, index) => acc += Math.abs(itr - you[index]), 0);
-    console.log(you, me, sumOfDifferences)
     const ratio = sumOfDifferences / (Alpine.store("questionnaire").items.length * 2);
-    console.log(sumOfDifferences)
     return 100 - Number(ratio.toFixed(2))*100;
   },
 

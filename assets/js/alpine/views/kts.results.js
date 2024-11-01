@@ -1,10 +1,6 @@
 export default () => ({
   
-  answersHaveLatencies: false,
-  
-  initKtsResults() {
-    this.answersHaveLatencies = this.$store.answers.answersHaveLatencies;
-  },
+  initKtsResults() {},
 
   roleMe: {
     ["x-text"]() {
@@ -40,7 +36,6 @@ export default () => ({
     async ["@click.prevent"]() {
       try {
         await navigator.clipboard.writeText(this.$store.answers["me"].compressedAnswers);
-        console.log('content copied to clipboard');
       } catch (err) {
         console.error('failed to copy: ', err);
       }
