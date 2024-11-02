@@ -1,4 +1,6 @@
 export default () => ({
+
+  showCopiedToClipboardMessage: false,
   
   initKtsResults() {},
 
@@ -36,9 +38,23 @@ export default () => ({
     async ["@click.prevent"]() {
       try {
         await navigator.clipboard.writeText(this.$store.answers["me"].compressedAnswers);
+        this.showCopiedToClipboardMessage = true;
+        setTimeout(() => this.showCopiedToClipboardMessage = false, 400);
       } catch (err) {
         console.error('failed to copy: ', err);
       }
+    },
+    
+    ["x-show.transition"]() {
+      return !this.showCopiedToClipboardMessage;
+    }
+  },
+
+  copiedToClipboardMessage: {
+    ["x-ref"]: "copiedToClipboardMessage",
+
+    ["x-show.transition"]() {
+      return this.showCopiedToClipboardMessage;
     }
   }
 });

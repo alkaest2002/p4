@@ -4,6 +4,7 @@ module.exports = {
   safelist: [
     "bg-indigo-50",
     "bg-transparent",
+    "block",
     "border-red-700",
     "focus:border-indigo-700",
     "focus:ring-indigo-700", 

@@ -15,6 +15,7 @@ compareAnswersSame: risposte uguali
 compressedAnswersTitle: il tuo codice delle risposte
 compressedAnswersInfo: conservlo per confrontare le tue risposte con quelle di un'altra persona.
 consentButton: accetta & prosegui
+copiedToClipboardMessage: copiato!
 fetchingMessage: "&rarr; I dati si stanno caricando. Per favore attendi..."
 fetchErrorMessage: "&rarr; Si è verificato un errore nel caricamento dei dati. Per favore, ricarica la pagina."
 groupTitle: il tuo gruppo
