@@ -53,9 +53,7 @@ export default (Alpine) => ({
   },
 
   setAnswer(answerValue, answerlatency = 0) {
-    const currentItemIndex = Alpine.store("questionnaire").currentItemIndex;
-    const currentItem = Alpine.store("questionnaire").currentItem;
-    const isLastItem = Alpine.store("questionnaire").isLastItem
+    const { currentItemIndex, currentItem, isLastItem } = Alpine.store("questionnaire");
     const dimension = currentItem.options[answerValue].dimension;
     const latency = (this.currentAnswer?.latency || 0) + answerlatency;
     this["me"].answers.splice(currentItemIndex, 1, { answerValue, dimension, latency });

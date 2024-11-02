@@ -2,4 +2,4 @@
 title: Answers
 layout: answers
 ---
-{{< base/lorem count=2 >}}
+{{< base/lorem count=1 >}}

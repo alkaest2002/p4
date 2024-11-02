@@ -1,4 +1,7 @@
 answers: risposte
+answersAll: tutte le risposte
+answersDifficult: risposte difficili
+answersEasy: risposte facili
 answersIndex: nr.
 chapter: capitolo {{ . }}
 choose: scegli tra una delle due opzioni proposte
@@ -7,10 +10,10 @@ clickHere: clicca qui
 clickHereToCompareAnswers: per confrontare le tue risposte con quelle dell'altra persona.
 clickToChange: Clicca per cambiare
 compareAnswersAll: tutte le risposte
-compareAnswersSame: risposte uguali
 compareAnswersDifferent: risposte diverse
+compareAnswersSame: risposte uguali
 compressedAnswersTitle: il tuo codice delle risposte
-compressedAnswersInfo: conserva questo codice per confrontare le tue risposte con quelle di un'altra persona.
+compressedAnswersInfo: conservlo per confrontare le tue risposte con quelle di un'altra persona.
 consentButton: accetta & prosegui
 fetchingMessage: "&rarr; I dati si stanno caricando. Per favore attendi..."
 fetchErrorMessage: "&rarr; Si è verificato un errore nel caricamento dei dati. Per favore, ricarica la pagina."
@@ -33,7 +36,7 @@ readAnswersLink: vai alle tue risposte
 readRoleLink: vai al tuo ruolo
 related: articoli simili
 rightsReserved: I contenuti del sito sono concessi con licenza
-roleInfo: leggi le informazioni riguardanti il tuo ruolo
+roleInfo: leggi le informazioni del tuo ruolo
 roleTitle: il tuo ruolo
 sec: sec
 show: Mostra

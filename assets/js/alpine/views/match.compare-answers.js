@@ -1,26 +1,28 @@
 export default () => ({
 
-  itemsWithAnswers: [],
-  showList: ["all", "same", "different"],
+  itemsWithAnswers: null,
+  itemsWithAnswersFiltered: null,
+  showList: ["all", "different", "same"],
   showIndex: 0,  
 
   initMatchCompareAnswers() {
     this.itemsWithAnswers = this.getAllAnswers();
+    this.itemsWithAnswersFiltered = this.itemsWithAnswers;
     this.$watch("showIndex", (val, oldVal) =>
-      val !== oldVal && (this.itemsWithAnswers = this.getAnswers(val)))
+      val !== oldVal && (this.itemsWithAnswersFiltered = this.getAnswers(val)))
   },
 
   getAllAnswers() {
-    return this.$store.answers.getItemsWithAnswers();
+    return this.itemsWithAnswers || this.$store.answers.getItemsWithAnswers();
   },
   
   getSameAnswers() {
-    return this.getAllAnswers()
+    return this.itemsWithAnswers
       .filter(el => el.answerMe.answerValue === el.answerYou.answerValue);
   },
   
   getDifferentAnswers() {
-    return this.getAllAnswers()
+    return this.itemsWithAnswers
       .filter(el => el.answerMe.answerValue != el.answerYou.answerValue)
   },
 
@@ -28,8 +30,8 @@ export default () => ({
     return val == 0
       ? this.getAllAnswers()
       : val == 1
-        ? this.getSameAnswers()
-        : this.getDifferentAnswers()
+        ? this.getDifferentAnswers()
+        : this.getSameAnswers()
   },
 
   get show() {
@@ -38,7 +40,7 @@ export default () => ({
 
   items: {
     
-    ["x-for"]: "{ itemId, itemA, itemB, answerMe, answerYou } in itemsWithAnswers",
+    ["x-for"]: "{ itemId, itemA, itemB, answerMe, answerYou } in itemsWithAnswersFiltered",
     
     [":key"]: "itemId"
   },
@@ -53,8 +55,8 @@ export default () => ({
     }
   },
 
-  showSameLink: {
-    ["x-ref"]: "showSameLink",
+  showDifferentLink: {
+    ["x-ref"]: "showDifferentLink",
 
     ["x-show"]: "showIndex == 1",
 
@@ -63,8 +65,8 @@ export default () => ({
     }
   },
 
-  showDifferentLink: {
-    ["x-ref"]: "showDifferentLink",
+  showSameLink: {
+    ["x-ref"]: "showSameLink",
 
     ["x-show"]: "showIndex == 2",
 
