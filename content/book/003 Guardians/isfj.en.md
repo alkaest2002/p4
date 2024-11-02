@@ -1,7 +1,7 @@
 ---
 title: ISFJ
-linkTitle: Protecotor
-role: Protecotor
+linkTitle: Protector
+role: protector
 group: guardian
 order: 3.3
 aliases:

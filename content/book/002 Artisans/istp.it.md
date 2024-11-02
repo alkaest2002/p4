@@ -2,7 +2,7 @@
 title: ISTP
 linkTitle: Crafter
 role: crafter
-group: guardian
+group: artisan
 order: 2.4
 aliases:
   - /types/ISTP
