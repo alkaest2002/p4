@@ -1,5 +1,6 @@
 ---
 title: Temperament and character
+linkTitle: chapt. 1
 order: 1
 url: theory/temperament-and-character
 ---

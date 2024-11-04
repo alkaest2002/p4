@@ -17,6 +17,10 @@ a {
     @apply cursor-pointer;
 }
 
+#content h1, #content h2, #content h3  {
+    @apply mt-6 first:mt-0 font-extrabold;
+}
+
 #content p {
     @apply my-3;
 }
