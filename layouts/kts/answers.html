@@ -45,13 +45,18 @@
             <div class="flex justify-between">
               <p x-text="itemId.slice(-3)" class="font-extrabold text-xl"></p>
               <div
-                x-bind="showLatency" 
-                class="text-sm"><span x-text="((answerMe.latency || 0) / 1000).toFixed(2)"></span> {{ T "sec" }}
+                x-bind="showLatency"
+                class="text-sm">
+                  <span x-text="((answerMe.latency || 0) / 1000).toFixed(2)"></span> {{ T "sec" }}
               </div>
             </div>
             <div class="mt-3">
-              <p x-bind="item(itemA, 'a', answerMe)"></p>
-              <p x-bind="item(itemB, 'b', answerMe)"></p>
+              <div x-ref="itemA" :data-item-text="itemTextA" :data-answer-value="answerMe.answerValue" data-option-value="a">
+                <p x-bind="itemA"></p>
+              </div>
+              <div x-ref="itemB" :data-item-text="itemTextB" :data-answer-value="answerMe.answerValue" data-option-value="b" >
+                <p x-bind="itemB"></p>
+              </div>
             </div>
           </div>
         </template>

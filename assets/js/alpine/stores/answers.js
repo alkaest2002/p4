@@ -32,8 +32,8 @@ export default (Alpine) => ({
     return Object.values(Alpine.store("questionnaire").items)
       .map((el, index) => ({
         itemId: el.id,
-        itemA: `${el.text}... ${el.options.a.text}`,
-        itemB: `${el.text}... ${el.options.b.text}`,
+        itemTextA: `${el.text}... ${el.options.a.text}`,
+        itemTextB: `${el.text}... ${el.options.b.text}`,
         answerMe: this["me"].answers[index],
         answerYou: this["you"].answers[index]
       }));

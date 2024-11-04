@@ -40,7 +40,7 @@ export default () => ({
 
   items: {
     
-    ["x-for"]: "{ itemId, itemA, itemB, answerMe, answerYou } in itemsWithAnswersFiltered",
+    ["x-for"]: "{ itemId, itemTextA, itemTextB, answerMe, answerYou } in itemsWithAnswersFiltered",
     
     [":key"]: "itemId"
   },

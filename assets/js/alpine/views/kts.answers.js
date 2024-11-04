@@ -7,6 +7,7 @@ export default () => ({
 
   initKtsAnswers() {
     this.itemsWithAnswers = this.getAllAnswers();
+    console.log(this.itemsWithAnswers)
     this.itemsWithAnswersFiltered = this.itemsWithAnswers;
     this.$watch("showIndex", (val, oldVal) =>
       val !== oldVal && (this.itemsWithAnswersFiltered = this.getAnswers(val)))
@@ -36,29 +37,40 @@ export default () => ({
   },
 
   items: {
-    
-    ["x-for"]: "{ itemId, itemA, itemB, answerMe } in itemsWithAnswersFiltered",
+    ["x-for"]: "{ itemId, itemTextA, itemTextB, answerMe } in itemsWithAnswersFiltered",
     
     [":key"]: "itemId"
   },
 
-  item(itemText, optionValue, answer) {
-    return {
+  itemNumber: {
+
+  },
+
+  itemA: {
+    "x-text"() {
+      return this.$refs.itemA.dataset.itemText
+    },
       
-      "x-text"() {
-        return itemText
-      },
+    ":class"() {
+      return this.$refs.itemA.dataset.answerValue === this.$refs.itemA.dataset.optionValue
+        ? "font-semibold"
+        : "text-sm text-gray-400"
+    }
+  },
+
+  itemB: {
+    "x-text"() {
+      return this.$refs.itemB.dataset.itemText
+    },
       
-      ":class"() {
-        return answer?.answerValue === optionValue
-          ? "font-semibold"
-          : "text-sm text-gray-400"
-      }
+    ":class"() {
+      return this.$refs.itemB.dataset.answerValue === this.$refs.itemB.dataset.optionValue
+        ? "font-semibold"
+        : "text-sm text-gray-400"
     }
   },
 
   showFilters: {
-
     ["x-ref"]: "showFilters",
 
     ["x-show"]() {
@@ -67,9 +79,11 @@ export default () => ({
   },
 
   showLatency: {
+    ["x-ref"]: "showLatency",
+
     ["x-show"]() {
       return this.$store.answers.answersHaveLatencies;
-    }
+    },
   },
 
   showAllAnswersLink: {

@@ -45,7 +45,7 @@ export default () => ({
       }
     },
     
-    ["x-show.transition"]() {
+    ["x-show"]() {
       return !this.showCopiedToClipboardMessage;
     }
   },
@@ -53,7 +53,7 @@ export default () => ({
   copiedToClipboardMessage: {
     ["x-ref"]: "copiedToClipboardMessage",
 
-    ["x-show.transition"]() {
+    ["x-show"]() {
       return this.showCopiedToClipboardMessage;
     }
   }
