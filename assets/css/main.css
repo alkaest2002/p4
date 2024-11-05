@@ -30,13 +30,20 @@ a {
 }
 
 #content ul {
-    @apply my-6 ml-3 list-disc list-inside;
+    @apply my-6 ml-6 list-disc;
 }
 
 #content ul li {
-    @apply my-1;
+    @apply my-3;
 }
 
+#content ol {
+    @apply my-6 ml-6 list-decimal;
+}
+
+#content ol li {
+    @apply my-3;
+}
 
 /*********************************************/
 /* ALPINE RELATED  CSS                       */

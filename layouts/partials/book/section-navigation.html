@@ -1,0 +1,14 @@
+<div class="mt-6 flex flex-wrap justify-between gap-3">
+  {{- with .PrevInSection }}
+      <a class="flex-grow flex flex-col p-2 border border-gray-300 rounded-md text-indigo-700" href="{{ .RelPermalink }}">
+          {{- partialCached "base/svg-arrow-prev" . }}
+          <p>{{ .Title }}</p>
+      </a>
+  {{- end }}
+  {{- with .NextInSection }}
+      <a class="flex-grow flex flex-col items-end p-2 border border-gray-300 rounded-md text-indigo-700" href="{{ .RelPermalink }}">
+          {{- partialCached "base/svg-arrow-next" . }}
+          <p>{{ .Title }}</p>
+      </a>
+  {{- end }}
+</div>
