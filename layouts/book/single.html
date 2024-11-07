@@ -10,10 +10,8 @@
             {{ T "readingTime" .ReadingTime }}
         </span>
     </div>
-        {{- partial "book/toc" . }}
-    <div>
-        <div id="content">{{ .Content }}</div>
-    </div>
+    {{- partial "book/toc" . }}
+    <div id="content">{{ .Content }}</div>
     {{- partial "book/section-navigation" . }}
 </div>
 {{- end }}

@@ -73,6 +73,7 @@ export default () => ({
     
     ["@click"]() {
       this.toggle();
+      this.$dispatch("dropdownLink", { text: this.$el.innerText });
     }
   }
 })
