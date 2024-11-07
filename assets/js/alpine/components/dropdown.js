@@ -2,8 +2,8 @@ export default () => ({
 
   open: false,
 
-  init() {
-    this.$watch("open", (val) => this.$store.app.languageDropdownIsOpen = val);
+  initDropDown(prop) {
+    prop && this.$watch("open", (val) => prop = val);
   },
 
   toggle() {
@@ -32,7 +32,7 @@ export default () => ({
     
     ["@focusin.window"]({ target }) {
       !this.$refs.panel.contains(target) && this.close();
-    }
+    },
   },
 
   dropdownButton: {
@@ -66,6 +66,13 @@ export default () => ({
     
     ["@click.outside"]() {
       this.close(this.$refs.button);
+    }
+  },
+
+  dropdownLink: {
+    
+    ["@click"]() {
+      this.toggle();
     }
   }
 })

@@ -18,7 +18,7 @@ a {
 }
 
 #content h1, #content h2, #content h3  {
-    @apply mt-6 first:mt-0 font-extrabold;
+    @apply mt-6 first:mt-0 font-extrabold scroll-my-24;
 }
 
 #content p {

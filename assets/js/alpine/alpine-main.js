@@ -12,6 +12,7 @@ import sAnswers from "./stores/answers";
 import vBase from "./views/base";
 import vMenu from "./views/menu";
 import vHome from "./views/home";
+import vBookArticle from "./views/book.article";
 import vKtsQuestionnaire from "./views/kts.questionnaire";
 import vKtsAnswers from "./views/kts.answers";
 import vKtsResults from "./views/kts.results";
@@ -21,6 +22,7 @@ import vMatchCompareAnswers from "./views/match.compare-answers";
 
 // components
 import cDropdown from "./components/dropdown";
+import cDropdownToc from "./components/dropdownToc";
 
 Alpine.plugin(persist);
 Alpine.store("app", sApp(Alpine));
@@ -31,6 +33,7 @@ Alpine.store("answers", sAnswers(Alpine));
 Alpine.data("base", vBase);
 Alpine.data("menu", vMenu);
 Alpine.data("home", vHome);
+Alpine.data("bookArticle", vBookArticle);
 Alpine.data("ktsQuestionnaire", vKtsQuestionnaire);
 Alpine.data("ktsAnswers", vKtsAnswers);
 Alpine.data("ktsResults", vKtsResults);
@@ -39,5 +42,6 @@ Alpine.data("matchConvergence", vMatchConvergence);
 Alpine.data("matchCompareAnswers", vMatchCompareAnswers);
 
 Alpine.data("dropdown", cDropdown);
+Alpine.data("dropdownToc", cDropdownToc);
 
 window.Alpine ?? (window.Alpine = Alpine).start();

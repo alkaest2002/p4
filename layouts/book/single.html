@@ -1,12 +1,16 @@
 {{- define "main" }}
-<div class="flex-grow">
+<div
+    x-data="bookArticle"
+    x-init="initBookArticle"
+    class="flex-grow relative"
+>
     <div class="mb-6">
         <h1 class="text-xl font-bold">{{ .Params.role | default .Title | strings.FirstUpper }}</h1>
         <span class="text-sm text-gray-500">
             {{ T "readingTime" .ReadingTime }}
         </span>
     </div>
-    {{- partial "book/toc" . }}
+        {{- partial "book/toc" . }}
     <div>
         <div id="content">{{ .Content }}</div>
     </div>

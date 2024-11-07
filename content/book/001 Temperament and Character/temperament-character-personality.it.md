@@ -8,7 +8,7 @@ Nell’esplorazione della natura umana, incontriamo i concetti intrecciati di te
 
 Per comprendere meglio questa dinamica, possiamo considerare come diverse specie—e per estensione, individui—sviluppano abitudini distinte in linea con le proprie inclinazioni temperamentali. Ad esempio, le volpi sono naturalmente inclini a razziare i pollai, mentre i delfini formano gruppi sociali molto uniti. Allo stesso modo, gli esseri umani mostrano schemi comportamentali coerenti sin dall’infanzia che prefigurano lo sviluppo del carattere e della personalità.
 
-### Panoramica Storica
+## Panoramica Storica
 
 Le teorie sul temperamento hanno una storia ricca che risale alle antiche filosofie greche e romane. Il filosofo greco Platone e il medico romano Galeno contribuirono significativamente alla comprensione iniziale del temperamento, associandolo ai quattro umori corporei: sangue, bile nera, bile gialla e flemma. Questa teoria suggeriva che un equilibrio tra questi umori influenzasse i tipi temperamentali: Sanguigno (ottimista), Melanconico (riflessivo), Collerico (appassionato) e Flemmatico (calmo).
 
