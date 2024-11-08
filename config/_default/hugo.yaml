@@ -1,6 +1,7 @@
-title: Blog
-description: Personal blog
+title: P4
+description: P4 Web Portal
 baseURL: http://localhost:9000
+publishDir: ./dev
 
 pluralizeListTitles: false
 capitalizeListTitles: false
