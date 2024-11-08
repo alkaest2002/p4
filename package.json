@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "dev": "hugo server -p 9000 --disableFastRender --ignoreCache --cleanDestinationDir",
-    "build-hugo": "hugo --gc --minify --cleanDestinationDir"
+    "build": "hugo --gc --minify --cleanDestinationDir"
   },
   "author": "",
   "license": "ISC",
