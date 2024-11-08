@@ -1,6 +1,6 @@
 import { initState, wipeState } from "../usables/useAlpineStore";
 
-const getBlanckDimensions = () => ({
+const getBlankDimensions = () => ({
   "dimensions": { 
     "counts":    { "E": 0, "I": 0, "S": 0, "N":0, "F": 0, "T": 0, "P":0, "J": 0 },
     "latencies": { "E": 0, "I": 0, "S": 0, "N":0, "F": 0, "T": 0, "P":0, "J": 0 },
@@ -10,8 +10,8 @@ const getBlanckDimensions = () => ({
 const stateFn = () => [
   [ "groups", []],
   [ "roles", []],
-  [ "me", {}, "" ],
-  [ "you", {}, "" ]
+  [ "me", {}],
+  [ "you", {}]
 ];
 
 export default (Alpine) => ({
@@ -65,9 +65,9 @@ export default (Alpine) => ({
   },
 
   computeDimensions(person = "me", answers) {
-    this[person] = getBlanckDimensions();
+    this[person] = getBlankDimensions();
     Object.values(answers).forEach(answer => {
-      const { dimension, latency}  = answer;
+      const { dimension, latency }  = answer;
       this[person].dimensions.counts[dimension] += 1;
       this[person].dimensions.latencies[dimension] += latency;
     });
