@@ -134,9 +134,12 @@ export default () => ({
         : this.optionBaseClass
     },
 
-    ["@click.prevent"]($event) {
+    ["@pointerdown"]({ pointerType }) {
+      [ "mouse", "touch", "pen" ].includes(pointerType) && this.$refs.nextButton.click();
+    },
+
+    ["@click.prevent"]() {
       this.setAnswer("a");
-      [ "mouse", "touch", "pen" ].includes($event.pointerType) && this.$refs.nextButton.click();
     }
   },
 
@@ -153,9 +156,12 @@ export default () => ({
         : this.optionBaseClass
     },
 
+    ["@pointerdown"]({ pointerType }) {
+     [ "mouse", "touch", "pen" ].includes(pointerType) && this.$refs.nextButton.click();
+    },
+
     ["@click.prevent"]($event) {
       this.setAnswer("b");
-      [ "mouse", "touch", "pen" ].includes($event.pointerType) && this.$refs.nextButton.click();
     }
   },
 
