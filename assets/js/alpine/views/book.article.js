@@ -14,7 +14,7 @@ export default () => ({
       },
       { rootMargin: `0px 0px -${offset}px 0px` }
     );
-    this.headings = document.querySelectorAll('#content h2, #content h3');
+    this.headings = document.querySelectorAll('#content h2, #content h3, #content h4');
     this.headings.forEach(el => this.observer.observe(el));
   },
 
