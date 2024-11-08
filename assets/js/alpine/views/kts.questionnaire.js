@@ -135,12 +135,9 @@ export default () => ({
     },
 
     ["@pointerdown"]({ pointerType }) {
+      this.setAnswer("a");
       [ "mouse", "touch", "pen" ].includes(pointerType) && this.$refs.nextButton.click();
     },
-
-    ["@click.prevent"]() {
-      this.setAnswer("a");
-    }
   },
 
   optionB: {
@@ -157,11 +154,8 @@ export default () => ({
     },
 
     ["@pointerdown"]({ pointerType }) {
+    this.setAnswer("b");
      [ "mouse", "touch", "pen" ].includes(pointerType) && this.$refs.nextButton.click();
-    },
-
-    ["@click.prevent"]($event) {
-      this.setAnswer("b");
     }
   },
 
@@ -170,14 +164,16 @@ export default () => ({
 
     ["@click.prevent"]() {
       this.clickedButton = "next";
-      if (this.$store.questionnaire.isComplete && this.$store.questionnaire.isLastItem) {
-        this.canNavigateAway && this.$store.navigation.goToPage("kts/results");
-      } else {
-        setTimeout(() => {
-          this.canNavigateAway && this.$store.questionnaire.increaseItemIndex();
-          this.clickedButton = null;
-        }, 150);
-      }
+      this.$nextTick(() => {
+        if (this.$store.questionnaire.isComplete && this.$store.questionnaire.isLastItem) {
+          this.canNavigateAway && this.$store.navigation.goToPage("kts/results");
+        } else {
+          setTimeout(() => {
+            this.canNavigateAway && this.$store.questionnaire.increaseItemIndex();
+            this.clickedButton = null;
+          }, 150);
+        }
+      })
     },
 
     [":class"]() {
