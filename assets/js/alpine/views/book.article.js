@@ -4,14 +4,15 @@ export default () => ({
   headings: null,
 
   initBookArticle() {
+    const offset = window.innerHeight
+      - (this.$refs.dropdownContainer?.getBoundingClientRect()?.top || 0);
     this.observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const intersecting = entry.isIntersecting;
-          intersecting && this.$dispatch("tocIntersect", { currentHeadingText: entry.target.innerHTML });
+          entry.isIntersecting && this.$dispatch("tocIntersect", { text: entry.target.innerHTML });
         }
       },
-      { rootMargin: "1000px 0px -900px 0px" }
+      { rootMargin: `0px 0px -${offset}px 0px` }
     );
     this.headings = document.querySelectorAll('#content h2, #content h3');
     this.headings.forEach(el => this.observer.observe(el));

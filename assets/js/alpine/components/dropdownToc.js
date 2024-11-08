@@ -5,8 +5,8 @@ export default () => ({
   initDropdownToc() {},
 
   dropdownTocContainer: {
-    ["@toc-intersect.camel.window"]({ detail: { currentHeadingText }}) {
-      this.currentAnchor = currentHeadingText;
+    ["@toc-intersect.camel.window"]({ detail: { text }}) {
+      this.currentAnchor = text;
     },
 
     ["@dropdown-link.camel"]({ detail: { text }}) {
@@ -17,7 +17,7 @@ export default () => ({
   dropdownTocLink: {   
 
     [":class"]() {
-      return this.currentAnchor === this.$el.innerHTML && "font-bold"
+      return this.currentAnchor === this.$el.innerHTML && "font-bold";
     }
   }
 })
