@@ -6,7 +6,7 @@ it:
   menus:
     main:
       - name: modello concettuale
-        pageRef: /book/intro
+        pageRef: /book
         weight: 1
       - name: conosci te stesso
         pageRef: /kts
@@ -26,7 +26,7 @@ en:
   menus:
     main:
       - name: conceptual framework
-        pageRef: /book/intro
+        pageRef: /book
         weight: 1
       - name: know yourself
         pageRef: /kts

@@ -1,6 +1,6 @@
 ---
-title: "Tipo 4: i razionalisti"
-linkTitle: rationalists
+title: "Tipo 4: rationals"
+linkTitle: Rationals
 order: 5
 ---
 Sintesi del capitolo 5: razionalisti

@@ -24,7 +24,9 @@
         {{- partial "base/breadcrumbs" . }}
         <div class="flex-grow flex flex-col p-9 pt-0">
             {{- block "main" . }} {{- end }}
-            {{- if eq .FirstSection (.Site.GetPage "book") }}
+            {{- $condition1 := .IsDescendant (.Site.GetPage "book") }}
+            {{- $condition2 := eq .Kind "page" }}
+            {{- if and $condition1 $condition2 }}
                 {{- partialCached "book/footer" . }}
             {{- end }}
             {{- partialCached "base/footer" . }}
