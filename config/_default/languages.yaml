@@ -18,6 +18,7 @@ it:
         pageRef: /credits
         weight: 4
 en:
+  disabled: True
   languageCode: en-US
   languageName: English
   title: TMP-4

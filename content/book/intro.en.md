@@ -6,9 +6,9 @@ url: theory/introduction
 
 The most effective approach to understanding **the conceptual model behind TMP-4** varies from person to person. Some guidelines are provided to facilitate decision-making.
 
-Chapter 1 focuses on temperament and character. Some readers may choose to quickly skim through this abstract chapter or return to it later after gaining a better understanding of the temperaments presented elsewhere.
+{{< base/link text="Chapter 1" link="book/001-temperament-and-character/" >}} focuses on temperament and character. Some readers may choose to quickly skim through this abstract chapter or return to it later after gaining a better understanding of the temperaments presented elsewhere.
 
-After **Chapter 1**, readers are encouraged to {{< base/link type="link" text="complete the questionnaire" link="/kts" class="mt-3 mr-1" >}} and explore their specific temperament:
+After {{< base/link text="chapter 1" link="book/001-temperament-and-character/" >}}, readers are encouraged to {{< base/link type="link" text="complete the questionnaire" link="/kts" class="mt-3 mr-1" >}} and explore their specific temperament:
 
 - {{< base/link text="Chapter 2: The Artisans" link="book/002-artisans/" >}}
 - {{< base/link text="Chapter 3: The Guardians" link="book/003-guardians/" >}}

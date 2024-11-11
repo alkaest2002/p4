@@ -154,8 +154,8 @@ export default () => ({
     },
 
     ["@pointerdown"]({ pointerType }) {
-    this.setAnswer("b");
-     [ "mouse", "touch", "pen" ].includes(pointerType) && this.$refs.nextButton.click();
+      this.setAnswer("b");
+      [ "mouse", "touch", "pen" ].includes(pointerType) && this.$refs.nextButton.click();
     }
   },
 
