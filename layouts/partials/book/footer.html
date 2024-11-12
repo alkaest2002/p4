@@ -1,22 +1,30 @@
 <div class="grid md:grid-cols-2 gap-3 mt-3">
-  <div class="h-48 flex flex-col justify-center items-center bg-indigo-50 rounded-md">
-    {{- with .Site.GetPage "book/002-artisans" }}
-      <a href="{{ .Permalink }}" class="text-4xl text-indigo-700">{{ .LinkTitle }}</a>
-    {{- end }}
-  </div>
-  <div class="h-48 flex flex-col justify-center items-center bg-indigo-50 rounded-md">
-    {{- with .Site.GetPage "book/003-guardians" }}
-      <a href="{{ .Permalink }}" class="text-4xl text-indigo-700">{{ .LinkTitle }}</a>
-    {{- end }}
-  </div>
-  <div class="h-48 flex flex-col justify-center items-center bg-indigo-50 rounded-md">
-    {{- with .Site.GetPage "book/004-idealists" }}
-      <a href="{{ .Permalink }}" class="text-4xl text-indigo-700">{{ .LinkTitle }}</a>
-    {{- end }}
-  </div>
-  <div class="h-48 flex flex-col justify-center items-center bg-indigo-50 rounded-md">
-    {{- with .Site.GetPage "book/005-rationals" }}
-      <a href="{{ .Permalink }}" class="text-4xl text-indigo-700">{{ .LinkTitle }}</a>
-    {{- end }}
-  </div>
+  {{- with .Site.GetPage "book/002-artisans" }}
+  <a href="{{ .Permalink }}">
+    <div class="h-48 flex flex-col justify-center items-center bg-indigo-50 rounded-md">
+      <p class="text-4xl text-indigo-700">{{ .LinkTitle }}</p>
+    </div>
+  </a>
+  {{- end }}
+  {{- with .Site.GetPage "book/003-guardians" }}
+  <a href="{{ .Permalink }}">
+    <div class="h-48 flex flex-col justify-center items-center bg-indigo-50 rounded-md">
+      <p class="text-4xl text-indigo-700">{{ .LinkTitle }}</p>
+    </div>
+  </a>
+  {{- end }}
+  {{- with .Site.GetPage "book/004-idealists" }}
+  <a href="{{ .Permalink }}">
+    <div class="h-48 flex flex-col justify-center items-center bg-indigo-50 rounded-md">
+      <p class="text-4xl text-indigo-700">{{ .LinkTitle }}</p>
+    </div>
+  </a>
+  {{- end }}
+  {{- with .Site.GetPage "book/005-rationals" }}
+  <a href="{{ .Permalink }}">
+    <div class="h-48 flex flex-col justify-center items-center bg-indigo-50 rounded-md">
+      <p class="text-4xl text-indigo-700">{{ .LinkTitle }}</p>
+    </div>
+  </a>
+  {{- end }}
 </div>
