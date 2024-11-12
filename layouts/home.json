@@ -1,7 +1,7 @@
 {{- $urls := dict }}
 {{- $roles := dict }}
 {{- $groups := dict }}
-{{- $bookSection := slice "002 Artisans" "003 Guardians" "004 Idealists" "005 Rationalists" }}
+{{- $bookSection := slice "002-artisans" "003-guardians" "004-idealists" "005-rationals" }}
 {{- range $bookSection }}
   {{- $section := $.Site.GetPage . }}
   {{- range $section.Pages }}

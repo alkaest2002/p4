@@ -2,7 +2,9 @@ export default () => ({
 
   showCopiedToClipboardMessage: false,
   
-  initKtsResults() {},
+  initKtsResults() {
+    console.log(this.$store.keirsey.getType("me"));
+  },
 
   roleMe: {
     ["x-text"]() {
