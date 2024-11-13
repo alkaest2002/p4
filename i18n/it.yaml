@@ -1,5 +1,6 @@
 answers: risposte
 answersAll: tutte le risposte
+answersConvergence: Convergenza delle risposte
 answersDifficult: risposte difficili
 answersEasy: risposte facili
 answersIndex: nr.
@@ -38,7 +39,9 @@ readRoleLink: vai al tuo ruolo
 related: articoli simili
 rightsReserved: I contenuti del sito sono concessi con licenza
 roleInfo: leggi le informazioni del tuo ruolo
-roleTitle: il tuo ruolo
+roleMe: il mio ruolo
+rolesConvergence: Convergenza dei ruoli
+roleYou: il suo ruolo
 sec: sec
 show: Mostra
 sortAnswersByItemId: ordina per quesito
