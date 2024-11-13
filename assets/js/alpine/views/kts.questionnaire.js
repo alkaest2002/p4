@@ -125,7 +125,11 @@ export default () => ({
     ["x-ref"]: "optionA",
 
     ["x-text"]() {
-      return this.$store.questionnaire.currentItem?.options?.a?.text;
+      const itemText = this.$store.questionnaire.currentItem.options.a.text;
+      const itemDimension = this.$store.questionnaire.currentItem.options.a.dimension;
+      return this.$store.app.envIsDevelopment 
+        ? `[${itemDimension}] ${itemText}`
+        : itemText;
     },
 
     [":class"]() {
@@ -144,7 +148,11 @@ export default () => ({
     ["x-ref"]: "optionB",
 
     ["x-text"]() {
-      return this.$store.questionnaire.currentItem?.options?.b?.text;
+      const itemText = this.$store.questionnaire.currentItem.options.b.text;
+      const itemDimension = this.$store.questionnaire.currentItem.options.b.dimension;
+      return this.$store.app.envIsDevelopment 
+        ? `[${itemDimension}] ${itemText}`
+        : itemText;
     },
 
     [":class"]() {

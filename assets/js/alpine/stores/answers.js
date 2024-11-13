@@ -33,8 +33,7 @@ export default (Alpine) => ({
     const you = this["you"].answers.map(({answerValue}) => answerValue);
     const sumOfDifferences = me.reduce((acc, itr, index) => acc += +(itr != you[index]), 0);
     const ratio = sumOfDifferences / Alpine.store("questionnaire").items.length;
-    console.log(ratio)
-    return 100 - Number(ratio.toFixed(2))*100;
+    return (100 - ratio * 100).toFixed(0);
   },
 
   getItemsWithAnswers() {
@@ -58,7 +57,7 @@ export default (Alpine) => ({
   },
 
   checkValidityOfCompressedString(compressedString) {
-    return /^[A-Za-z0-9+/]+$/.test(compressedString);
+    return /^[A-Za-z0-9+#]+$/.test(compressedString);
   },
 
   setAnswer(answerValue, answerlatency = 0) {

@@ -35,13 +35,11 @@ export default (Alpine) => ({
   },
 
   get rolesConvervenge() {
-    const me = Object.entries(this["me"].dimensions.counts)
-      .sort((a,b) => a[0].localeCompare(b[0])).map(el => el[1]);  
-    const you = Object.entries(this["you"].dimensions.counts)
-      .sort((a,b) => a[0].localeCompare(b[0])).map(el => el[1]);
+    const me = Object.values(this["me"].dimensions.counts);  
+    const you = Object.values(this["you"].dimensions.counts);
     const sumOfDifferences = me.reduce((acc, itr, index) => acc += Math.abs(itr - you[index]), 0);
     const ratio = sumOfDifferences / (Alpine.store("questionnaire").items.length * 2);
-    return 100 - Number(ratio.toFixed(2))*100;
+    return (100 - ratio * 100).toFixed(0);
   },
 
   getGroup(person = "me") {

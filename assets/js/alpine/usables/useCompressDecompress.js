@@ -1,4 +1,4 @@
-const base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+const base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+#";
 const padInputString  = input => (6 - input.length % 6) === 6 ? input : input + "a".repeat(6 - input.length % 6);
 const binaryToDecimal = input => parseInt(input, 2);
 const decimalToBase64 = input => base64Chars[input];
