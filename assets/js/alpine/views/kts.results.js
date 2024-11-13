@@ -3,7 +3,6 @@ export default () => ({
   showCopiedToClipboardMessage: false,
   
   initKtsResults() {
-    console.log(this.$store.keirsey.getType("me"));
   },
 
   roleMe: {
@@ -14,7 +13,7 @@ export default () => ({
 
   roleMeLink: {
     ["@click.prevent"]() {
-      this.$store.navigation.goToPage(this.$store.keirsey.getType("me"));
+      this.$store.navigation.goToPage(this.$store.keirsey.getQuartet("me"));
     },
   },
 

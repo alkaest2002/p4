@@ -27,7 +27,7 @@ export default (Alpine) => ({
   },
 
   getGroup(person = "me") {
-    const type = this.getType(person);
+    const type = this.getQuartet(person);
     return this.groups[type]
   },
 
@@ -40,19 +40,19 @@ export default (Alpine) => ({
   },
 
   getRole(person = "me") {
-    const type = this.getType(person);
-    return this.roles[type]
+    const quartet = this.getQuartet(person);
+    return this.roles[quartet];
   },
 
-  getTypeWithCoherenceValue(person = "me") {
+  getQuartetWithStats(person = "me") {
     return [["I","E"], ["N","S"], ["T","F"], ["J","P"]]
       .map(couples => couples.map(single => [ single, this[person].dimensions.counts[single] ]))
       .map(couples => couples.sort((a, b) => b.at(1) - a.at(1)))
       .map(couples => [ couples.at(0).at(0), couples.at(0).at(1) - couples.at(1).at(1)])
   },
 
-  getType(person = "me") {
-    const type = this.getTypeWithCoherenceValue(person).map(el => el[0]).join("");
+  getQuartet(person = "me") {
+    const type = this.getQuartetWithStats(person).map(el => el[0]).join("");
     return "EINSFTJP".split("").filter(el => type.indexOf(el) > -1).join("");
   },
 
@@ -73,13 +73,14 @@ export default (Alpine) => ({
     });
   },
 
-  computeConvergenceScoreBetweenMeandYou() {
+  computeConvergenceOfRoles() {
     const me = Object.entries(this["me"].dimensions.counts)
       .sort((a,b) => a[0].localeCompare(b[0])).map(el => el[1]);  
     const you = Object.entries(this["you"].dimensions.counts)
       .sort((a,b) => a[0].localeCompare(b[0])).map(el => el[1]);
     const sumOfDifferences = me.reduce((acc, itr, index) => acc += Math.abs(itr - you[index]), 0);
     const ratio = sumOfDifferences / (Alpine.store("questionnaire").items.length * 2);
+    console.log(me, you)
     return 100 - Number(ratio.toFixed(2))*100;
   },
 

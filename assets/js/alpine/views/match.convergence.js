@@ -38,7 +38,7 @@ export default () => ({
     ["x-ref"]: "convergence",
 
     ["x-text"]() {
-      return this.$store.keirsey.computeConvergenceScoreBetweenMeandYou();
+      return this.$store.keirsey.computeConvergenceOfRoles();
     }
   }
 });
