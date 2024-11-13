@@ -9,24 +9,36 @@
     </div>
     <div id="content" class="mb-6">{{ .Content }}</div>
     <div class="mt-6 flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-lg shadow-md">
-        <div class="w-full flex flex-col text-center pt-5">
-            <span class="mb-1">Il tuo ruolo</span>
-            <span x-bind="groupMe" class="block w-full text-2xl font-bold"></span>
-            <span x-bind="roleMe" class="block w-full font-bold leading-tight"></span>
+        <div class="p-3 pb-0 font-semibold">
+            <span>Convergenza dei ruoli</span>
         </div>
         <div class="flex gap-1 items-center font-extrabold text-indigo-700">
-            <span x-bind="convergence" class="text-[80px] font-mono"></span>
+            <span x-bind="rolesConvergence" class="text-[60px]"></span>
             <span class="text-[30px]">%</span>
         </div>
-        <div class="w-full flex flex-col text-center pb-5">
-            <span class="mb-1">il ruolo del tuo match</span>
-            <span x-bind="groupYou" class="block w-full text-2xl font-bold"></span>
-            <span x-bind="roleYou" class="block w-full font-bold leading-tight"></span>
+        <div class="w-full flex flex-col justify-center text-sm text-center p-3 pt-0">
+            <div>
+                <span>Il tuo ruolo</span>
+                <span x-bind="roleMe" class="font-bold leading-tight text-indigo-700 cursor-pointer"></span>
+            </div>
+            <div>
+                <span>Il suo ruolo</span>
+                <span x-bind="roleYou" class="font-bold leading-tight text-indigo-700 cursor-pointer"></span>
+            </div>
         </div>
     </div>
-    <div class="mt-6">
-        {{- $compareAnswers := .Site.GetPage "match/compare-answers" }}
-        <a href="{{ $compareAnswers.RelPermalink }}" class="text-indigo-700">{{ T "clickHere" | strings.FirstUpper }}</a> {{ T "clickHereToCompareAnswers" }}
+    <div class="mt-6 flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-lg shadow-md">
+        <div class="p-3 pb-0 font-semibold">
+            <span>Convergenza delle risposte</span>
+        </div>
+        <div class="leading-0 flex gap-1 items-center font-extrabold text-indigo-700">
+            <span x-bind="answersConvergence" class="text-[60px]"></span>
+            <span class="text-[30px]">%</span>
+        </div>
+        <div class="px-6 pb-3 text-sm">
+            {{- $compareAnswers := .Site.GetPage "match/compare-answers" }}
+            <a href="{{ $compareAnswers.RelPermalink }}" class="text-indigo-700">{{ T "clickHere" | strings.FirstUpper }}</a> {{ T "clickHereToCompareAnswers" }}
+        </div>
     </div>
 </div>
 {{- end }}

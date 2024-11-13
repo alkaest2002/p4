@@ -26,17 +26,27 @@ export default (Alpine) => ({
     return this.getGroup("you");
   },
 
-  getGroup(person = "me") {
-    const type = this.getQuartet(person);
-    return this.groups[type]
-  },
-
   get roleMe() {
     return this.getRole("me");
   },
 
   get roleYou() {
     return this.getRole("you");
+  },
+
+  get rolesConvervenge() {
+    const me = Object.entries(this["me"].dimensions.counts)
+      .sort((a,b) => a[0].localeCompare(b[0])).map(el => el[1]);  
+    const you = Object.entries(this["you"].dimensions.counts)
+      .sort((a,b) => a[0].localeCompare(b[0])).map(el => el[1]);
+    const sumOfDifferences = me.reduce((acc, itr, index) => acc += Math.abs(itr - you[index]), 0);
+    const ratio = sumOfDifferences / (Alpine.store("questionnaire").items.length * 2);
+    return 100 - Number(ratio.toFixed(2))*100;
+  },
+
+  getGroup(person = "me") {
+    const type = this.getQuartet(person);
+    return this.groups[type]
   },
 
   getRole(person = "me") {
@@ -71,17 +81,6 @@ export default (Alpine) => ({
       this[person].dimensions.counts[dimension] += 1;
       this[person].dimensions.latencies[dimension] += latency;
     });
-  },
-
-  computeConvergenceOfRoles() {
-    const me = Object.entries(this["me"].dimensions.counts)
-      .sort((a,b) => a[0].localeCompare(b[0])).map(el => el[1]);  
-    const you = Object.entries(this["you"].dimensions.counts)
-      .sort((a,b) => a[0].localeCompare(b[0])).map(el => el[1]);
-    const sumOfDifferences = me.reduce((acc, itr, index) => acc += Math.abs(itr - you[index]), 0);
-    const ratio = sumOfDifferences / (Alpine.store("questionnaire").items.length * 2);
-    console.log(me, you)
-    return 100 - Number(ratio.toFixed(2))*100;
   },
 
   wipeState(omit = []) {

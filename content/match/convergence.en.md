@@ -2,4 +2,4 @@
 title: Convergence
 layout: convergence
 ---
-The convergence percentage indicates the extent to which you and your match have given identical responses.
+Indicates the extent to which you and your match have similar roles and have given similar answers.

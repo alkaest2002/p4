@@ -2,43 +2,43 @@ export default () => ({
   
   initMatchConvergence() {},
 
-  groupMe: {
-    ["x-ref"]: "groupMe",
-
-    ["x-text"]() {
-      return this.$store.keirsey.groupMe
-    }
-  },
-
   roleMe: {
     ["x-ref"]: "roleMe",
+
+    ["@click"]() {
+      this.$store.navigation.goToPage(this.$store.keirsey.getQuartet("me"))
+    },
 
     ["x-text"]() {
       return this.$store.keirsey.roleMe
     }
   },
 
-  groupYou: {
-    ["x-ref"]: "groupYou",
-
-    ["x-text"]() {
-      return this.$store.keirsey.groupYou
-    }
-  },
-
   roleYou: {
     ["x-ref"]: "roleYou",
+
+    ["@click"]() {
+      this.$store.navigation.goToPage(this.$store.keirsey.getQuartet("you"))
+    },
 
     ["x-text"]() {
       return this.$store.keirsey.roleYou
     }
   },
 
-  convergence: {
-    ["x-ref"]: "convergence",
+  rolesConvergence: {
+    ["x-ref"]: "rolesConvergence",
 
     ["x-text"]() {
-      return this.$store.keirsey.computeConvergenceOfRoles();
+      return this.$store.keirsey.rolesConvervenge;
+    }
+  },
+
+  answersConvergence: {
+    ["x-ref"]: "answersConvergence",
+
+    ["x-text"]() {
+      return this.$store.answers.answersConvergence;
     }
   }
 });

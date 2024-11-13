@@ -28,6 +28,15 @@ export default (Alpine) => ({
     })
   },
 
+  get answersConvergence() {
+    const me = this["me"].answers.map(({answerValue}) => answerValue);
+    const you = this["you"].answers.map(({answerValue}) => answerValue);
+    const sumOfDifferences = me.reduce((acc, itr, index) => acc += +(itr != you[index]), 0);
+    const ratio = sumOfDifferences / Alpine.store("questionnaire").items.length;
+    console.log(ratio)
+    return 100 - Number(ratio.toFixed(2))*100;
+  },
+
   getItemsWithAnswers() {
     return Object.values(Alpine.store("questionnaire").items)
       .map((el, index) => ({
