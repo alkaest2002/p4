@@ -35,11 +35,14 @@ export default (Alpine) => ({
   },
 
   get rolesConvervenge() {
-    const me = Object.values(this["me"].dimensions.counts);  
-    const you = Object.values(this["you"].dimensions.counts);
-    const sumOfDifferences = me.reduce((acc, itr, index) => acc += Math.abs(itr - you[index]), 0);
-    const ratio = sumOfDifferences / (Alpine.store("questionnaire").items.length * 2);
-    return (100 - ratio * 100).toFixed(0);
+    const quartetMe = this.getQuartet("me").split("");
+    const quartetYou = this.getQuartet("you").split("");
+    const quartetRatio = quartetMe.filter((el) => quartetYou.indexOf(el) >= 0).length / 4;
+    const dimensionsMe = Object.values(this["me"].dimensions.counts);  
+    const dimensionsYou = Object.values(this["you"].dimensions.counts);
+    const dimensionsDiff = dimensionsMe.reduce((acc, itr, index) => acc += Math.abs(itr - dimensionsYou[index]), 0);
+    const dimensionsRatio = dimensionsDiff / (Alpine.store("questionnaire").items.length * 2);
+    return ((1 - dimensionsRatio) * 100 * Math.max(0, quartetRatio)).toFixed(0);
   },
 
   getGroup(person = "me") {
@@ -79,6 +82,7 @@ export default (Alpine) => ({
       this[person].dimensions.counts[dimension] += 1;
       this[person].dimensions.latencies[dimension] += latency;
     });
+    console.log(this[person].dimensions.counts)
   },
 
   wipeState(omit = []) {

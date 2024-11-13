@@ -29,8 +29,8 @@ export default (Alpine) => ({
   },
 
   get answersConvergence() {
-    const me = this["me"].answers.map(({answerValue}) => answerValue);
-    const you = this["you"].answers.map(({answerValue}) => answerValue);
+    const me = this["me"].answers.map(({ answerValue }) => answerValue);
+    const you = this["you"].answers.map(({ answerValue }) => answerValue);
     const sumOfDifferences = me.reduce((acc, itr, index) => acc += +(itr != you[index]), 0);
     const ratio = sumOfDifferences / Alpine.store("questionnaire").items.length;
     return (100 - ratio * 100).toFixed(0);
@@ -95,7 +95,7 @@ export default (Alpine) => ({
 
   setAnswersMeAndYou(compressedAnswersMe, compressedAnswersYou) {
     const shouldComputeMe = compressedAnswersMe !== this["me"].compressedAnswers
-    const omit = shouldComputeMe ? null : ["me"];
+    const omit = shouldComputeMe ? [] : ["me"];
     this.wipeState(omit);
     shouldComputeMe && (this["me"].compressedAnswers = compressedAnswersMe);
     shouldComputeMe && this.setAnswers("me");

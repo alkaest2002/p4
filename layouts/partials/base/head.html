@@ -20,7 +20,7 @@
 	<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
 {{- end }}
 {{- $alpine := resources.Get "js/alpine/alpine-main.js" }}
-{{- $alpine = $alpine | js.Build (dict "targetPath" "js/alpine.js" "minify" true) }}
+{{- $alpine = $alpine | js.Build (dict "targetPath" "js/alpine.js" "minify" false) }}
 {{- $alpineSecure := $alpine | resources.Fingerprint "sha512" }}
 {{- with $alpineSecure }}
 	<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>

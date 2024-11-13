@@ -63,7 +63,7 @@ export default () => ({
 
     ["@click.prevent"]() {     
       this.passValidationMe  = this.$store.answers.checkValidityOfCompressedString(this.compressedAnswersMe); 
-      this.passValidationYou = this.$store.answers.checkValidityOfCompressedString(this.compressedAnswersYou);       
+      this.passValidationYou = this.$store.answers.checkValidityOfCompressedString(this.compressedAnswersYou);
       this.passValidationMe && this.passValidationYou
         && this.$store.answers.setAnswersMeAndYou(this.compressedAnswersMe, this.compressedAnswersYou);
       this.passValidationMe && this.passValidationYou && this.$store.navigation.goToPage("match/convergence");

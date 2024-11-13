@@ -25,8 +25,9 @@ export function importState(dataJSON) {
   }
 };
 
-export function wipeState(stateFn, omit) {
+export function wipeState(stateFn, omitProps) {
+  console.log(omitProps)
   stateFn().forEach(([key, defaultValue]) => {
-    this[key] = omit.includes(key) ? this[key] : defaultValue;
+    this[key] = omitProps.includes(key) ? this[key] : defaultValue;
   });
 };
