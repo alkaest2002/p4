@@ -1,6 +1,5 @@
 import { initState, wipeState } from "../usables/useAlpineStore";
-import { compressString, decompressString } from "../usables/useCompressDecompress";
-
+import { base64Chars, compressString, decompressString } from "../usables/useCompressDecompress";
 const stateFn = () => [
   [
     "me", 
@@ -57,7 +56,10 @@ export default (Alpine) => ({
   },
 
   checkValidityOfCompressedString(compressedString) {
-    return /^[A-Za-z0-9+#]+$/.test(compressedString);
+    const stringLength = Math.ceil(Alpine.store("questionnaire").items.length / 6);
+    const pattern = `^[${base64Chars}]{${stringLength}}$`;
+    const regex = new RegExp(pattern);
+    return regex.test(compressedString);
   },
 
   setAnswer(answerValue, answerlatency = 0) {

@@ -42,7 +42,7 @@ export default (Alpine) => ({
     const dimensionsYou = Object.values(this["you"].dimensions.counts);
     const dimensionsDiff = dimensionsMe.reduce((acc, itr, index) => acc += Math.abs(itr - dimensionsYou[index]), 0);
     const dimensionsRatio = dimensionsDiff / (Alpine.store("questionnaire").items.length * 2);
-    return ((1 - dimensionsRatio) * 100 * Math.max(0, quartetRatio)).toFixed(0);
+    return ((1 - dimensionsRatio) * 100 * Math.max(0.1, quartetRatio)).toFixed(0);
   },
 
   getGroup(person = "me") {
@@ -82,7 +82,6 @@ export default (Alpine) => ({
       this[person].dimensions.counts[dimension] += 1;
       this[person].dimensions.latencies[dimension] += latency;
     });
-    console.log(this[person].dimensions.counts)
   },
 
   wipeState(omit = []) {
