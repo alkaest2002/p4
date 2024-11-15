@@ -6,31 +6,23 @@ export default () => ({
   showIndex: 0,  
 
   initKtsAnswers() {
-    this.itemsWithAnswers = this.getAllAnswers();
-    console.log(this.itemsWithAnswers)
-    this.itemsWithAnswersFiltered = this.itemsWithAnswers;
+    this.itemsWithAnswers = this.$store.answers.getItemsWithAnswers();
+    this.itemsWithAnswersFiltered = [ ...this.itemsWithAnswers ];
     this.$watch("showIndex", (val, oldVal) =>
       val !== oldVal && (this.itemsWithAnswersFiltered = this.getAnswers(val)))
   },
-
-  getAllAnswers() {
-    const answers = this.itemsWithAnswers || this.$store.answers.getItemsWithAnswers();
-    return this.$store.answers.answersHaveLatencies
-      ? answers.sort((a, b) => b.answerMe.latency - a.answerMe.latency)
-      : answers;
-  },
   
   getDifficultAnswers() {
-    return this.itemsWithAnswers.slice(0, Math.round(this.itemsWithAnswers.length * .25));
+    return this.itemsWithAnswers.slice(0, Math.round(this.itemsWithAnswers.length * .2));
   },
   
   getEasyAnswers() {
-    return this.itemsWithAnswers.slice(-Math.round(this.itemsWithAnswers.length * .25));
+    return this.itemsWithAnswers.slice(-Math.round(this.itemsWithAnswers.length * .2));
   },
 
   getAnswers(val)  {
     return val == 0
-      ? this.getAllAnswers()
+      ? this.itemsWithAnswers
       : val == 1
         ? this.getDifficultAnswers()
         : this.getEasyAnswers()

@@ -36,7 +36,7 @@ export default (Alpine) => ({
   },
 
   getItemsWithAnswers() {
-    return Object.values(Alpine.store("questionnaire").items)
+    const answers = Object.values(Alpine.store("questionnaire").items)
       .map((el, index) => ({
         itemId: el.id,
         itemTextA: `${el.text}... ${el.options.a.text}`,
@@ -44,6 +44,9 @@ export default (Alpine) => ({
         answerMe: this["me"].answers[index],
         answerYou: this["you"].answers[index]
       }));
+    return this.answersHaveLatencies
+      ? answers.sort((a, b) => b.answerMe.latency - a.answerMe.latency)
+      : answers;
   },
 
   getCurrentAnswer(person = "me") {
